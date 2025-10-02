@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>EcoKart - Home</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+      
+      <link rel="stylesheet" href="css/styles.css" />
+   </head>
+   <body>
+
+    
+<!--Navbar:1-->
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: #000120;">
+<!-- <nav class="navbar navbar-expand-lg navbar-light mb-0" style="background-color: #000120;"> -->
+  <div class="container-fluid d-flex align-items-center">
+    <a class="navbar-brand me-5" href="index.html">
+      <img src="assets/images/ecokart.jpeg" alt="EcoKart Logo" style="width: 110px; height: 90px;">
+    </a>
+
+    <a href="#" class="text-decoration-none me-4 position-relative" style="color:aliceblue;">
+        <i class="fa-solid fa-location-dot" style="font-size: 40px;color:aliceblue"></i>Delivery to Kolkata 700036<br><b style="color:aliceblue; font-size:20px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Update location</b>
+      </a>
+
+      <div class="dropdown language-dropdown me-4">
+  <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+    <img src="assets/images/india.png" alt="Language" style="width: 28px; height: 28px; font-size:25px;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" class="me-2">
+    Choose Language
+  </button>
+  
+  <ul class="dropdown-menu p-2" aria-labelledby="languageDropdown">
+    <li>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="language" id="english" checked>
+        <label class="form-check-label" for="english">English - EN</label>
+      </div>
+    </li>
+    <li>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="language" id="hindi">
+        <label class="form-check-label" for="hindi">हिन्दी - HI</label>
+      </div>
+    </li>
+    <li>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="language" id="bengali">
+        <label class="form-check-label" for="bengali">বাংলা - BN</label>
+      </div>
+    </li>
+    <li>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="language" id="tamil">
+        <label class="form-check-label" for="tamil">தமிழ் - TA</label>
+      </div>
+    </li>
+    <li>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="language" id="telugu">
+        <label class="form-check-label" for="telugu">தெலுங்கு - TE</label>
+      </div>
+    </li>
+    <li>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="language" id="telugu">
+        <label class="form-check-label" for="telugu">മലയാളം - MAL</label>
+      </div>
+    </li>
+    <li>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="language" id="telugu">
+        <label class="form-check-label" for="telugu">ಕನ್ನಡ-KN</label>
+      </div>
+    </li>
+    <li><hr class="dropdown-divider"></li>
+    <li><span class="dropdown-item-text">You are Shopping on EcoKart.com</span></li>
+    <li><a class="dropdown-item text-primary" href="#">Change country/region</a></li>
+  </ul>
+</div>
+
+    <div class="d-flex align-items-center me-5">  
+      <div class="input-group" style="width: 1000px; height:55px">
+        <span class="input-group-text"><i class="fas fa-search"></i></span>
+        <input type="text" id="search-input" class="form-control" placeholder="Search Products ,Brands and More in EcoKart.com...">
+        <button class="btn btn-outline-secondary" id="search-button" type="button">Search</button>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center ms-auto" style="font-size:15px">
+
+      <a href="index.html" class="text-decoration-none me-4 position-relative" style="color:aliceblue;">
+        <i class="fa fa-home" style="font-size: 30px;color:aliceblue"></i> <b>Home</b>
+      </a>
+      <a href="#" class="text-decoration-none  me-4" style="color:aliceblue;">
+        <i class="fa fa-sign-in" style="font-size: 30px; color:aliceblue"></i><b>Login</b>
+      </a>
+      
+      <a href="#" class="text-decoration-none me-4 position-relative" 
+   style="color:rgb(241, 241, 244);" onclick="renderWishlist()">
+   <i class="fa fa-heart" style="font-size: 30px;color:aliceblue"></i>
+   <b>My Wishlist</b>
+   <span id="wishlist-count" 
+         class="position-absolute top-0 start-5 translate-middle badge rounded-pill bg-danger">0</span>
+   <div id="wishlist-dropdown" 
+      style="
+        display: none;
+        position: absolute;
+        top: 40px; /* Adjust this value to position it below a typical header/icon */
+        right: 0; /* Align to the right edge of its container (e.g., the wishlist button) */
+        width: 300px; /* Give it a decent width */
+        max-height: 400px; /* Limit height and allow scrolling for many items */
+        overflow-y: auto; /* Enable vertical scroll when max-height is reached */
+        background-color: #393838; /* Clean white background */
+        padding: 15px; /* More padding for internal space */
+        border: 1px solid #e0e0e0; /* Subtle border */
+        border-radius: 8px; /* Rounded corners for a modern look */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft, noticeable shadow */
+        z-index: 1000; /* High z-index to ensure it sits on top of other content */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clear, modern font */
+        
+        /* Target all text elements inside the dropdown */
+       #wishlist-dropdown * {
+         color: #090303 !important;
+       }  
+
+        /* Specifically target the text span if you used the recommended JS update */
+       .wishlist-item-text {
+         color: #070303 !important; /* Forces the text to be dark grey */
+         text-shadow: none !important; /* Ensure no white text-shadow is being applied */
+      }"></div>
+</a>
+
+
+      <a href="#" class="text-decoration-none me-4 position-relative" style="font-size:18px;color:rgb(246, 245, 244)">
+        <i class="fas fa-shipping-fast" style="font-size: 30px;color:aliceblue"></i><br><b>Orders & Returns</b>
+      </a>
+
+      <button class="btn btn-outline-success position-relative me-4" id="cart-button">
+        <img src="assets/images/cart.jpg" alt="Cart" style="width:40px; height:40px; vertical-align:middle;">
+        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+      </button>
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle rounded-pill d-flex align-items-center px-3" style="font-size:20px" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa fa-ellipsis-v me-2"></i>More
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+          <li>
+            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="#">
+              <i class="fa-solid fa-bell" style="font-size: 30px;"></i>&nbsp Notification Preferences
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="#">
+              <i class="fa fa-headphones" style="font-size: 25px;"></i>&nbsp 24 * 7 Customer Care
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="about-contact.html#about">
+              <i class="fa fa-circle-info me-2" style="font-size: 30px;"></i> About Us
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="about-contact.html#contact">
+              <i class="fa fa-address-book me-2" style="font-size: 30px;"></i> Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<style>
+        body {
+            /* Optional: To prevent scrollbars when offcanvas is open */
+            overflow-x: hidden;
+        }
+
+        /* --- Main Secondary Navbar --- */
+        .navbar-secondary {
+            background-color: #232f3e;
+            padding: 2px 6px; /* Reduced padding */
+            border-bottom: 1px solid #f5f1f1;
+        }
+
+        /* Common style for all clickable items in the navbar */
+        .nav-item-secondary {
+            padding: 4px 12px;
+            margin: 0 2px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: border-color 0.2s ease-in-out;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .nav-item-secondary:hover,
+        .nav-item-secondary:focus {
+            color: #ffffff;
+            border-color: #ffffff;
+            outline: none; /* Remove default browser focus outline */
+        }
+        
+        /* Special styling for the 'All' button */
+        .btn-all-menu {
+            background-color: transparent;
+        }
+
+        /* --- Offcanvas Side Menu --- */
+        .offcanvas-header {
+            background-color: #232f3e;
+            color: #ffffff;
+        }
+
+        .offcanvas-body {
+            padding: 0;
+        }
+
+        .offcanvas-link, .offcanvas-collapse-trigger {
+            display: block;
+            padding: 15px 25px;
+            color: #111;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s ease;
+        }
+        
+        .offcanvas-link:hover, .offcanvas-collapse-trigger:hover {
+            background-color: #f0f0f0;
+            color: #000;
+        }
+
+        .offcanvas-collapse-trigger {
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Sub-menu inside the collapsible area */
+        .offcanvas-submenu a {
+            padding-left: 45px; /* Indent sub-items */
+            background-color: #fafafa;
+        }
+
+        /* --- Prime Popover Styling --- */
+        .popover-prime-ad {
+            max-width: 355px !important; /* Force a max-width */
+            padding: 0;
+            border: 1px solid #ddd;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .popover-prime-ad .popover-body {
+            padding: 0;
+        }
+        .prime-ad-image {
+            display: block;
+        }
+    </style>
+<!--Navbar:2-->
+<nav class="navbar-secondary" style="background-color: #0d0e39;">
+  <div class="d-flex align-items-center">
+            
+            <button class="btn nav-item-secondary btn-all-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu" style="font-size:25px;color:white;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                <i class="fas fa-bars me-1" style="color:#eee; font-size:30px"></i> All
+            </button>
+            
+            <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px"><i class="fa fa-suitcase" aria-hidden="true"></i> Sell</a>
+            <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px"><i class="fa-solid fa-user-check"></i> Best Sellers</a>
+            <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px">Today's Deals</a>
+            <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px">New Releases</a>
+            
+            <a href="#" 
+            style="color:#eee; font-size:22px"
+               class="nav-item-secondary"
+               tabindex="0"
+               data-bs-toggle="popover"
+               data-bs-trigger="hover focus" 
+               data-bs-html="true"
+               data-bs-placement="bottom"
+               data-bs-custom-class="popover-prime-ad"
+               data-bs-content='<img src="assets/images/Prime-Black.png" width=650px height=280px alt="EcoKart Prime Membership Ad" class="prime-ad-image">'>Prime <i class="fa fa-caret-down fa-xs ms-1" style="color:#403f3f; font-size:16px"></i>
+            </a>
+            
+             <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px">Offer Zone <i class='fa fa-star' style='font-size:24px'></i>
+             </a>
+              <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px">Coupons
+                <span class="fa-stack fa-lg">
+              <i class="fa fa-certificate fa-stack-2x" style="color:#333332"></i>
+              <i class="fa fa-tag fa-stack-1x fa-inverse"></i>
+             </span> 
+              </a>
+              <!-- All Categories -->
+  <div class="nav-item-dropdown me-3" style="position: relative;">
+    <a href="#" id="all-categories-toggle" class="nav-item-secondary" style="color:#eee; font-size:22px">
+      <i class="fa fa-list"></i> All Categories
+    </a>
+    <!-- Dropdown container (hidden by default) -->
+    <div id="all-categories-dropdown" class="dropdown-menu-custom" style="display:none;">
+      <select id="category-filter" class="form-select">
+        <option value="all">All Categories</option>
+        <option value="Home Decor">Home Decor</option>
+        <option value="Education">Education</option>
+        <option value="Personal Care">Personal Care</option>
+        <option value="Kitchen">Kitchen</option>
+        <option value="Daily Use">Daily Use</option>
+        <option value="Men's Fashion">Men's Fashion</option>
+        <option value="Women's Fashion">Women's Fashion</option>
+        <option value="Pets & Kids">Pets & Kids</option>
+        <option value="Outdoor & Sports">Outdoor & Sports</option>
+        <option value="Gifts & Stationary">Gifts & Stationary</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Filter -->
+  <div class="nav-item-dropdown" style="position: relative;">
+    <a href="#" id="filter-toggle" class="nav-item-secondary" style="color:#eee; font-size:22px">
+      <i class="fa fa-filter"></i> Filter
+    </a>
+    <!-- Dropdown container (hidden by default) -->
+    <div id="filter-dropdown" class="dropdown-menu-custom" style="display:none; max-height:300px; overflow-y:auto;">
+      <div id="category-checkboxes">
+        <!-- Injected checkboxes by JS -->
+      </div>
+    </div>
+  </div>
+              
+              <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px"><i class="fa-solid fa-user"></i> My Account </a>
+              <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px"> <i class='fas fa-headset' style='font-size:36px'></i> Customer Service</a>
+              <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px">My Notifications <i class="fa fa-bell" aria-hidden="true" style="color:rgb(244, 241, 241)"></i></a>
+
+        <!-- <a href="index.html" class="navbar-logo">
+          <img src="assets/images/navbar-logo.png" alt="Your Brand Logo">
+        </a> -->
+        </div>
+</nav>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" 
+    style="color:#eee; font-size:22px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" id="offcanvasMenuLabel">
+      <i class="fa-solid fa-user-circle me-2" style="font-size:40px"></i> Hello, Sign in</h5>
+
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="offcanvas-menu-container">
+      <div id="offcanvas-main-menu" class="offcanvas-panel active">
+        <!--Slider Menu section-->
+        <!--Membership Zone-->
+        <a href="#" class="offcanvas-link" style="color:#070202; font-size:25px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+          <i class="fa fa-fire" aria-hidden="true"></i> EcoKart Prime/Black Zone
+        </a>
+        <!--Trending Zone-->
+        <a class="offcanvas-collapse-trigger" data-bs-toggle="collapse" href="#trendingCollapse" role="button" aria-expanded="false" aria-controls="trendingCollapse">
+          <div class="text-center">
+            <span class="d-inline-flex align-items-center" style="color:#070202; font-size:25px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Trending
+              <i class="fa-solid fa-arrow-trend-up ms-1"></i>
+            </span>
+          </div>
+          <i class="fas fa-chevron-down"></i>
+        </a>
+        <div class="collapse" id="trendingCollapse">
+          <div class="offcanvas-submenu">
+            <a href="#" class="offcanvas-link" style="color:#080101; font-size:20px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Best Sellers</a>
+            <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">New Releases</a>
+            <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Today's Deals</a>
+            <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Offer Zone</a>
+          </div>
+        </div>
+        
+        <!--Programs Zone-->
+        <a class="offcanvas-collapse-trigger" data-bs-toggle="collapse" href="#programCollapse" role="button" aria-expanded="false" aria-controls="programCollapse">
+          
+            <span class="d-inline-flex align-items-center" style="color:#070202; font-size:25px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+            Programs & Features&nbsp<i class="fa fa-american-sign-language-interpreting" style="font-size:24px"></i>
+            </span>
+          
+          <i class="fas fa-chevron-down"></i>
+        </a>
+        <div class="collapse" id="programCollapse">
+          <div class="offcanvas-submenu">
+
+            <!--Gifts section-->
+            <a class="offcanvas-link offcanvas-nav-trigger d-flex justify-content-between align-items-center" href="#giftsCollapse">
+              <span class="d-inline-flex align-items-center" style="color:#080101; font-size:20px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                Gift Cards &nbsp;<i class="fa fa-gift" aria-hidden="true" style="font-size:24px"></i>
+              </span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">EcoKart Launchpad & Business</a>
+            <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Handloom & Handicraft</a>
+            <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">EcoKart Saheli</a>
+            <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Buy more, Save More</a>
+            <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">International Brands</a>
+          </div>
+        </div>
+
+        <!--Already in navbar section-->
+        <a href="#" class="offcanvas-link" style="color:#070202; font-size:25px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+          <i class="fa fa-suitcase" aria-hidden="true"></i> Sell on EcoKart
+        </a>
+        <a href="#" class="offcanvas-link" style="color:#070202; font-size:25px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+          <i class="fa fa-shipping-fast" aria-hidden="true"></i> My Orders
+        </a>
+        <a href="#" class="offcanvas-link" style="color:#070202; font-size:25px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+          <i class="fa fa-heart" aria-hidden="true"></i> My Wishlist
+        </a>
+        <a href="http://127.0.0.1:5500/checkout.html" class="offcanvas-link" style="color:#070202; font-size:25px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart
+        </a>
+
+        <!-- All Categories in Sidebar -->
+    <a class="offcanvas-collapse-trigger d-flex justify-content-between align-items-center" 
+       data-bs-toggle="collapse" href="#sidebarCategoriesCollapse" role="button" aria-expanded="false" aria-controls="sidebarCategoriesCollapse">
+      <span style="color:#070202; font-size:22px; font-family:'Lucida Sans', sans-serif;">
+        <i class="fa fa-list"></i> All Categories
+      </span>
+      <i class="fas fa-chevron-down"></i>
+    </a>
+    <div class="collapse" id="sidebarCategoriesCollapse">
+      <div class="offcanvas-submenu p-2">
+        <select id="sidebar-category-filter" class="form-select">
+          <option value="all">All Categories</option>
+          <option value="Home Decor">Home Decor</option>
+          <option value="Education">Education</option>
+          <option value="Personal Care">Personal Care</option>
+          <option value="Kitchen">Kitchen</option>
+          <option value="Daily Use">Daily Use</option>
+          <option value="Men's Fashion">Men's Fashion</option>
+          <option value="Women's Fashion">Women's Fashion</option>
+          <option value="Pets & Kids">Pets & Kids</option>
+          <option value="Outdoor & Sports">Outdoor & Sports</option>
+          <option value="Gifts & Stationary">Gifts & Stationary</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Filter in Sidebar -->
+    <a class="offcanvas-collapse-trigger d-flex justify-content-between align-items-center mt-3"
+       data-bs-toggle="collapse" href="#sidebarFilterCollapse" role="button" aria-expanded="false" aria-controls="sidebarFilterCollapse">
+      <span style="color:#070202; font-size:22px; font-family:'Lucida Sans', sans-serif;">
+        <i class="fa fa-filter"></i> Filter
+      </span>
+      <i class="fas fa-chevron-down"></i>
+    </a>
+    <div class="collapse" id="sidebarFilterCollapse">
+      <div class="offcanvas-submenu p-2" style="max-height:300px; overflow-y:auto;">
+        <div id="sidebar-category-checkboxes">
+          <!-- Injected dynamically by JS -->
+        </div>
+      </div>
+    </div>
+
+
+        <!--Settings Zone-->
+        <a class="offcanvas-collapse-trigger" data-bs-toggle="collapse" href="#settingCollapse" role="button" aria-expanded="false" aria-controls="settingCollapse">
+          <div class="text-center">
+            <span class="d-inline-flex align-items-center" style="color:#070202; font-size:25px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+            Help & Settings &nbsp<i class="fa fa-cog" aria-hidden="true"></i>
+            </span>
+          </div>
+          <i class="fas fa-chevron-down"></i>
+        </a>
+        <div class="collapse" id="settingCollapse">
+          <div class="offcanvas-submenu">
+            <a href="#" class="offcanvas-link" style="color:#080101; font-size:20px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">My Account</a>
+            <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Sign in</a>
+            <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">My Notifications</a>
+            <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Customer Service</a>
+            <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Help Centre & Legal</a>
+
+          </div>
+        </div>
+      </div>
+      <div id="giftsCollapse" class="offcanvas-panel">
+              <a class="offcanvas-link offcanvas-back-trigger" href="#offcanvas-main-menu">
+                    <i class="fas fa-chevron-left"></i>
+                    <span style="font-weight: bold;font-size:25px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">&nbsp&nbspMain Page</span>
+              </a>
+
+              <a href="#" class="offcanvas-link" style="color:#080101; font-size:20px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Popular Gift Cards</a>
+              <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Gift Boxes, Gift Tags, Greeting Cards</a>
+              <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Birthday Gifts</a>
+              <a href="#" class="offcanvas-link" style="color:#050101; font-size:20px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Wedding & Anniversary</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!--Carousel-2-->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1200">
+
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="height: 410px;">
+      <img src="assets/images/carousel-4.png" class="d-block w-100" style="height: 100%; object-fit: cover; object-position: center 91% ;" alt="First slide">
+    </div>
+    <div class="carousel-item" style="height: 410px;">
+      <img src="assets/images/i-2.png" class="d-block w-100" style="height: 100%; object-fit: cover;  object-position: 80% 37%;" alt="Third slide">
+    </div>
+    <div class="carousel-item" style="height: 410px;">
+      <img src="assets/images/carousel-13.png" class="d-block w-100" style="height: 100%; object-fit: cover; object-position: 30% 58%;" alt="Fifth slide">
+    </div>
+    <div class="carousel-item" style="height: 410px;">
+      <img src="assets/images/carousel-2.png" class="d-block w-100" style="height: 100%; object-fit: cover; object-position: 50% 50%;" alt="Sixth slide">
+    </div>
+    <div class="carousel-item" style="height: 410px;">
+      <img src="assets/images/carousel-9.png" class="d-block w-100" style="height: 100%; object-fit: cover;object-position: 50% 0%" alt="Sixth slide">
+    </div>
+    <div class="carousel-item" style="height: 410px;">
+      <img src="assets/images/carousel-11.png" class="d-block w-100" style="height: 100%; object-fit: cover; object-position: 10% 64%;" alt="Fifth slide">
+    </div>
+    <div class="carousel-item" style="height: 410px;">
+      <img src="assets/images/carousel-5.png" class="d-block w-100" style="height: 100%; object-fit: cover; object-position: 30% 48%;" alt="Sixth slide">
+    </div>
+    <div class="carousel-item" style="height: 410px;">
+      <img src="assets/images/carousel-6.png" class="d-block w-100" style="height: 100%; object-fit: cover; object-position: 50% 64%;" alt="Sixth slide">
+    </div>
+    <div class="carousel-item" style="height: 410px;">
+      <img src="assets/images/carousel-12.png" class="d-block w-100" style="height: 100%; object-fit: cover; object-position: 30% 40%;" alt="Fifth slide">
+    </div>
+    <div class="carousel-item" style="height: 410px;">
+      <img src="assets/images/carousel-7.png" class="d-block w-100" style="height: 100%; object-fit: cover; object-position: 50% 50%;" alt="Sixth slide">
+    </div>
+    <div class="carousel-item" style="height: 410px;">
+      <img src="assets/images/carousel-8.png" class="d-block w-100" style="height: 100%; object-fit: cover; object-position: 50% 50%;" alt="Sixth slide">
+    </div>
+    <div class="carousel-item" style="height: 410px;">
+      <img src="assets/images/carousel-14.png" class="d-block w-100" style="height: 100%; object-fit: cover; object-position: 0% 10%;" alt="Fifth slide">
+    </div>
+    <div class="carousel-item" style="height: 410px;">
+      <img src="assets/images/i-1.png" class="d-block w-100" style="height: 100%; object-fit: cover; object-position: 80% 60%;" alt="Fourth slide">
+    </div>
+    <div class="carousel-item" style="height: 410px;">
+      <img src="assets/images/carousel-1.png" class="d-block w-100" style="height: 100%; object-fit: cover; object-position: center 91%;" alt="Second slide">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="visually-hidden">Next</span>
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>
+<style>
+  /* Target only the carousel with the ID "carouselExampleIndicators" */
+#carouselExampleIndicators .carousel-control-prev-icon,
+#carouselExampleIndicators .carousel-control-next-icon {
+    /* This filter turns the default white SVG icon to black */
+    filter: invert(1);
+}</style>
+      <!-- <header class="text-center bg-success text-white py-5">
+         <h1 style="color:rgb(216, 111, 127)">
+            🌍💚 <span style="font-family: 'Pacifico', cursive;">Welcome to EcoKart!</span> 🌱♻️
+         </h1>
+         <p>
+            <span style="font-family: 'Comic Sans', sans-serif; font-size: 18px; color: rgb(236, 202, 13);"><i><b>Eco-friendly products for a sustainable Earth ahead!</b></i></span>  
+         </p>
+      </header> -->
+
+      <!--Heading & Time Section-->
+      <!-- <div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 style="color:rgb(4, 4, 232)" text-align:center><b>Our Featured Products 👉</b></h2>
+    </div>
+    <div class="col-md-6 text-md-end">
+      <p class="mb-0" style="color:rgb(73, 234, 51)"><i>HOT DEAL ENDS IN...</i></p>
+      <div id="timer" class="fs-4 fw-bold" style="color:rgb(238, 11, 11);position: relative; z-index: 1;"></div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Section for images-categories -->
+<div class="section-below-navbar" style="background-color: #0d0e39;">
+  <div class="image-row justify-content-center flex-wrap">
+    <div class="image-item">
+      <img src="assets/images/cat-kitchen.jpeg" alt="Image 1">
+      <p style="font-size: 20px;"><b>Kitchen</b></p>
+    </div>
+    <div class="image-item">
+      <img src="assets/images/cat-home.jpeg" alt="Image 2">
+      <p style="font-size: 20px;"><b>Home Decoration</b></p>
+    </div>
+    <div class="image-item">
+      <img src="assets/images/cat-wfashion.jpg" alt="Image 3">
+      <p style="font-size: 20px;"><b>Women's Fashion</b></p>
+    </div>
+    <div class="image-item">
+      <img src="assets/images/cat-stat.jpeg" alt="Image 4">
+      <p style="font-size: 20px;"><b>Gifts & Stationary</b></p>
+    </div>
+    <div class="image-item">
+      <img src="assets/images/cat-mfashion.jpeg" alt="Image 5">
+      <p style="font-size: 20px;"><b>Men's Fashion</b></p>
+    </div>
+    <div class="image-item">
+      <img src="assets/images/cat-beauty.jpeg" alt="Image 6">
+      <p style="font-size: 20px;"><b>Beauty & Health</b></p>
+    </div>
+    <div class="image-item">
+      <img src="assets/images/cat-baby.jpeg" alt="Image 7">
+      <p style="font-size: 20px;"><b>Baby & Kids</b></p>
+    </div>
+  </div>
+</div>
+
+<!--Carousel-Product Slider Adv-2(Featured Brands)-->
+<div id ="Featured" class="product-carousel-section1" style="background-color: #e0dfdf;padding: 20px 0;">
+    <h2 class="text-center mb-4" style="font-size:40px"><b><i>Featured Brands 🏷️®️™</i></b></h2>
+    <div class="product-banner1 d-flex align-items-center">
+        
+        <div class="product-images2 d-flex" id="product-images2">
+          <figure class="product-item1">
+            <img src="assets/images/brand-3.jpg" class="img-fluid">
+            <figcaption class="product-caption1">Starting from ₹179</figcaption>
+          </figure>
+          <figure class="product-item1">
+            <img src="assets/images/brand-4.jpg" class="img-fluid"><br>
+            <figcaption class="product-caption1"> Starting from ₹199</figcaption>
+          </figure>
+          <figure class="product-item1">
+            <img src="assets/images/brand-2.jpg" class="img-fluid">
+            <figcaption class="product-caption1">Starting from ₹140</figcaption>
+          </figure>
+          <figure class="product-item1">
+            <img src="assets/images/brand-1.png" class="img-fluid">
+            <figcaption class="product-caption1">Starting from ₹159</figcaption>
+          </figure>&nbsp;&nbsp;
+          <figure class="product-item1">
+            <img src="assets/images/brand-7.jpg" class="img-fluid">
+            <figcaption class="product-caption1">Starting from ₹399</figcaption>
+          </figure>
+          <figure class="product-item1">
+            <img src="assets/images/brand-8.jpeg" class="img-fluid">
+            <figcaption class="product-caption1">Starting from ₹399</figcaption>
+          </figure>
+          <figure class="product-item1">
+            <img src="assets/images/brand-10.jpeg" class="img-fluid">
+            <figcaption class="product-caption1">Starting from ₹189</figcaption>
+          </figure>&nbsp;&nbsp;
+          <figure class="product-item1">
+            <img src="assets/images/brand-6.jpg" class="img-fluid" height="350px">
+            <figcaption class="product-caption1">Starting from ₹189</figcaption>
+          </figure>&nbsp;&nbsp;
+          <figure class="product-item1">
+            <img src="assets/images/brand-5.jpg" class="img-fluid">
+            <figcaption class="product-caption1">Starting from ₹199</figcaption>
+          </figure>&nbsp;&nbsp;
+          <figure class="product-item1">
+            <img src="assets/images/brand-9.jpg" class="img-fluid">
+            <figcaption class="product-caption1">Starting from ₹199</figcaption>
+          </figure>&nbsp;&nbsp;
+        
+          <!-- <button class="carousel-control-prev" type="button" data-bs-target="#Featured" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#Featured" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button> -->
+          <div class="carousel-controls">
+              <button class="carousel-control-prev" id="prev-btn2" aria-label="Previous">
+                  <span class="carousel-control-prev-icon custom-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" id="next-btn2" aria-label="Next">
+                  <span class="carousel-control-next-icon custom-icon" aria-hidden="true"></span>
+              </button>
+          </div>
+        </div>
+      <!-- <style>
+  /* Target only the carousel with the ID "Featured" */
+#Featured .carousel-control-prev-icon,
+#Featured .carousel-control-next-icon {
+    /* This filter turns the default white SVG icon to black */
+    filter: invert(1);
+      }</style> -->
+
+      </div>
+        
+    </div>
+</div>
+
+
+
+<!--Banner Section-1 Grid type-->
+    <div class="banner-container" style="background-color:white">
+        <div class="banner">
+          <h3><b>Up to 45% Off | BestSellers from Indian Artisans!</b></h3>
+            <div class="image-container">
+                <img src="assets/images/art-1.jpeg" alt="Image 1">
+                <img src="assets/images/2.png" alt="Image 2">
+                <img src="assets/images/art-5.png" alt="Image 3">
+                <img src="assets/images/art-4.png" alt="Image 4">
+            </div>
+            <div class="see-all"><a href="#">See all</a></div>
+        </div>
+        <div class="banner">
+          <h3><b>Buy 2 & Get 40% Off With More Offers!</b></h3>
+            <div class="image-container">
+                <img src="assets/images/buy-1.png" alt="Image 5">
+                <img src="assets/images/buy-2.jpg" alt="Image 6">
+                <img src="assets/images/buy-3.png" alt="Image 7">
+                <img src="assets/images/buy-4.png" alt="Image 8">
+            </div>
+            <div class="see-all"><a href="#">See all</a></div>
+        </div>
+        <div class="banner">
+          <h3><b>Flat 30% Off on Home Decorations Hot Deals!</b></h3>
+            <div class="image-container">
+                <img src="assets/images/4-1.1.jpg" alt="Image 13">
+                <img src="assets/images/4-1.2.jpg" alt="Image 14">
+                <img src="assets/images/4-1.3.jpg" alt="Image 15">
+                <img src="assets/images/4-1.4.jpg" alt="Image 16">
+            </div>
+            <div class="see-all"><a href="#">See all</a></div>
+        </div>
+        <div class="banner">
+          <h3><b>Minimum 35% Off Top picks from Women Enterpreneurs!</b></h3>
+            <div class="image-container">
+                <img src="assets/images/ent-1.png" alt="Image 9">
+                <img src="assets/images/ent-2.png" alt="Image 10">
+                <img src="assets/images/ent-3.png" alt="Image 11">
+                <img src="assets/images/ent-4.png" alt="Image 12">
+            </div>
+            <div class="see-all"><a href="#">See all</a></div>
+        </div>
+        <div class="banner-2">
+            <div class="image-container-2">
+                <img src="assets/images/show.png" alt="Image 9" style="margin-top:50px;margin-right: -80px;" width="90%" height="220%">
+            </div>
+        </div>
+    </div>
+
+
+<!--Banner Section-2 Grid type-->
+
+<div class="banner-container" style="background-color:white;margin-left:-450px">
+        <div class="banner">
+          <h3><b>Flat 10% CashBack Offers! | Home & Kitchen Products</b></h3>
+            <div class="image-container">
+                <img src="assets/images/cas-1.png" alt="Image 1">
+                <img src="assets/images/b-2.1.2.jpg" alt="Image 2">
+                <img src="assets/images/b-2.1.3.jpg" alt="Image 3">
+                <img src="assets/images/b-2.1.4.jpg" alt="Image 4">
+            </div>
+            <div class="see-all"><a href="#">See all</a></div>
+        </div>
+        <div class="banner">
+          <h3><b>Upto 80 % Off EcoKart Brands and more!</b></h3>
+            <div class="image-container">
+                <img src="assets/images/eco-1.png" alt="Image 5">
+                <img src="assets/images/eco-2.png" alt="Image 6">
+                <img src="assets/images/eco-3.png" alt="Image 7">
+                <img src="assets/images/eco-4.png" alt="Image 8">
+            </div>
+            <div class="see-all"><a href="#">See all</a></div>
+        </div>
+        <div class="banner">
+          <h3><b>Deals You might like in Clothing & Accessories!</b></h3>
+            <div class="image-container">
+                <img src="assets/images/acc-4.png" alt="Image 13">
+                <img src="assets/images/acc-3.png" alt="Image 14">
+                <img src="assets/images/acc-2.png" alt="Image 17">
+                <img src="assets/images/acc-1.png" alt="Image 16">
+            </div>
+            <div class="see-all"><a href="#">See all</a></div>
+        </div>
+        <div class="banner">
+          <h3><b>For Your Wishlist! 🎁</b></h3>
+            <div class="image-container">
+                <img src="assets/images/wish-1.png" alt="Image 9">
+                <img src="assets/images/wish-2.png" alt="Image 10">
+                <img src="assets/images/wish-3.png" alt="Image 11">
+                <img src="assets/images/wish-4.png" alt="Image 12">
+            </div>
+            <div class="see-all"><a href="#">See all</a></div>
+        </div>
+        <div class="banner-2">
+            <div class="image-container-2">
+                <img src="assets/images/show-4.jpg" alt="Image 9" style="margin-top:80px;margin-right:-532px;" width="700%" height="2000%">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Carousel-Product Slider Adv-1-->
+<div class="product-carousel-section1" style="background-color: #e0dfdf;padding: 20px 0;">
+    <h2 class="text-center mb-4"><b><i>Starting ₹99 + 20% Cashback on first order | Beauty 💄 & Makeup 💅🏻</i></b></h2>
+    
+    <div class="product-banner1 d-flex align-items-center">
+        <button class="carousel-control-prev" id="prev-btn1" aria-label="Previous">
+            <span class="carousel-control-prev-icon custom-icon" aria-hidden="true"></span>
+        </button>
+        <div class="product-images1 d-flex" id="product-images1">
+          
+          <figure class="product-item">
+            <img src="assets/images/cos-1.jpg" class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">-23% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹139<sup>00</sup></span>
+                <span class="price-original">₹180</span>
+              </div>
+              <p class="product-title">Maybelline New York Intense Colour Colossal Kajal</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/cos-2.jpg" class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">44% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹379<sup>00</sup></span>
+                <span class="price-original">₹679</span>
+              </div>
+              <p class="product-title">L'Oréal Paris Casting Crème Gloss</p>
+            </figcaption>
+          </figure>&nbsp;
+          
+          <figure class="product-item">
+            <img src="assets/images/cos-3.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">24% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹249<sup>00</sup></span>
+                <span class="price-original">₹364</span>
+              </div>
+              <p class="product-title">LAKMÉ Forever Matte Lip Colour</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/cos-4.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">64% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹279<sup>00</sup></span>
+                <span class="price-original">₹649</span>
+              </div>
+              <p class="product-title">L'Oreal Paris Extraordinary Oil Hair</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/cos-5.jpg"  class="img-fluid ">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">40% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹599<sup>00</sup></span>
+                <span class="price-original">₹999</span>
+              </div>
+              <p class="product-title">Maybelline New York Color Sensational Creamy Matte Lipstick</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/cos-6.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">43% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹170<sup>00</sup></span>
+                <span class="price-original">₹299</span>
+              </div>
+              <p class="product-title">L'Oreal Paris Kajal Magique Matte Finish 0,35G (Black)</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/cos-7.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">48% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹153<sup>00</sup></span>
+                <span class="price-original">₹295</span>
+              </div>
+              <p class="product-title">Just Herbs Naynam Day-long Kajal </p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/cos-8.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">51% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹245<sup>00</sup></span>
+                <span class="price-original">₹499</span>
+              </div>
+              <p class="product-title">Lakme Sun Expert SPF 50 PA+++</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/cos-9.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">36% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹3494<sup>00</sup></span>
+                <span class="price-original">₹5421</span>
+              </div>
+              <p class="product-title">82°E Gotu Kola Dew Revitalizing Toner Serum with Gotu Kola and Niacinamide (100 Ml)</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/cos-10.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">36% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹194<sup>00</sup></span>
+                <span class="price-original">₹6299</span>
+              </div>
+              <p class="product-title">Swiss Beauty Cream It Up Blush</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/cos-11.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">38% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹109<sup>00</sup></span>
+                <span class="price-original">₹175</span>
+              </div>
+              <p class="product-title">LAKMÉ Powerplay Mousse Foundation Mini, Matte Finish</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/cos-12.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">49% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹372<sup>00</sup></span>
+                <span class="price-original">₹729.00</span>
+              </div>
+              <p class="product-title">Maybelline New York Instant Age Rewind Dark Circles Treatment</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/cos-13.jpeg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">12% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹220<sup>00</sup></span>
+                <span class="price-original">₹249.00</span>
+              </div>
+              <p class="product-title">Nykaa Floral Carnival Nail Enamel - Hot Pink Poppy (Shade No.108) (9ml)</p>
+            </figcaption>
+          </figure>
+            
+            
+        </div>
+        <button class="carousel-control-next" id="next-btn1" aria-label="Next">
+            <span class="carousel-control-next-icon custom-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+</div>
+
+
+
+<!--Carousel-Product Slider Adv-2(** Limited Offer**)-->
+<div class="product-carousel-section1" style="background-color: #e0dfdf;padding: 20px 0;">
+    <div class="offer-banner-urgent">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2 class="mb-0" style="font-size:30px; margin-left: 180px;"><b><i>🌟 Limited Time Offer! ⏰ Jewellery 💍, Gifting & Stationery 🛍 Deals | ₹2999+ with No Cost EMI 💸</i></b></h2>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0 d-lg-flex justify-content-lg-end align-items-center gap-2">
+              <p class="deal-text mb-0">HOT DEAL ENDS IN...</p>
+              <div id="timer-urgent"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="product-banner1 d-flex align-items-center">
+        <div class="product-images3 d-flex" id="product-images3">
+          
+          <figure class="product-item">
+            <img src="assets/images/lim-1.jpg" class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">-9% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹28,058<sup>00</sup></span>
+                <span class="price-original">₹30,999</span>
+              </div>
+              <p class="product-title">Malabar Gold & Diamonds Natural Emerald Earrings for Women 22k Gold | 22 kt (916)</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/lim-2.jpg" class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">3% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹35,193<sup>00</sup></span>
+                <span class="price-original">₹36,788</span>
+              </div>
+              <p class="product-title">P.C. Chandra Jewellers 22k (916) Yellow Gold, American Diamond and Emerald Ring</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/lim-4.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">18% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹98,858<sup>00</sup></span>
+                <span class="price-original">₹1,20,00</span>
+              </div>
+              <p class="product-title">Joyalukkas 18k (750) Purity VVS-VS Clarity & FG Coloured Meadow Blossom Diamond Bracelet </p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/lim-3.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">-24% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹93,469<sup>00</sup></span>
+                <span class="price-original">₹1,13,064</span>
+              </div>
+              <p class="product-title">Joyalukkas Ratna Collections 22k (916) Yellow Gold and Emerald Chain Necklace</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/lim-6.png"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">-43% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹439<sup>00</sup></span>
+                <span class="price-original">₹1499</span>
+              </div>
+              <p class="product-title">Storite Women's Tote Bag With Leather Handles & Embroidery Printed Handbag</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/lim-5.png"  class="img-fluid ">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">-10% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹341<sup>00</sup></span>
+                <span class="price-original">₹567</span>
+              </div>
+              <p class="product-title">Carrylux Large Capacity Croco Pattern Tote Bags</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/lim-7.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">-65% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹654<sup>00</sup></span>
+                <span class="price-original">₹1800</span>
+              </div>
+              <p class="product-title">INTERNATIONAL GIFT Silver Plated Laxmi Ganesh Saraswati God Idol</p>
+            </figcaption>
+          </figure>&nbsp;&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/lim-8.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">-51% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹319<sup>00</sup></span>
+                <span class="price-original">₹799</span>
+              </div>
+              <p class="product-title">Secret Temptation EAU DE Parfum Gift Set for Women</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/lim-9.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">49% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹2046<sup>00</sup></span>
+                <span class="price-original">₹3999/span>
+              </div>
+              <p class="product-title">CLARA 925 Sterling Silver Heart Pendant Necklace</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/lim-10.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">-50% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹2,880<sup>00</sup></span>
+                <span class="price-original">₹5799</span>
+              </div>
+              <p class="product-title">GIVA 925 Silver Vesper Earrings</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/lim-11.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">-68% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹2,279<sup>00</sup></span>
+                <span class="price-original">₹5,999</span>
+              </div>
+              <p class="product-title">BEHOMA Aluminium Dancing Peacock Pair Figurine</p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/lim-12.jpg"  class="img-fluid">
+            <figcaption class="product-details">
+              <div class="offer-line">
+                <span class="offer-badge">-69% off</span>
+                <span class="offer-text">Great Indian Festival</span>
+              </div>
+              <div class="price-line">
+                <span class="price-current">₹177<sup>00</sup></span>
+                <span class="price-original">₹499.00</span>
+              </div>
+              <p class="product-title">Shuttle Art Office Desk Organizer with Drawer, All in One</p>
+            </figcaption>
+          </figure>&nbsp;
+            
+            
+        </div>
+        <div class="carousel-controls">
+              <button class="carousel-control-prev" id="prev-btn3" aria-label="Previous">
+                  <span class="carousel-control-prev-icon custom-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" id="next-btn3" aria-label="Next">
+                  <span class="carousel-control-next-icon custom-icon" aria-hidden="true"></span>
+              </button>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Banner Section-3 Big Size-->
+    <div class="banner-container1" style="background-color:white">
+        <div class="banner1">
+          <h3><b>Buy 2 Get 1 Free!<br>Fashion's Top Deals!</b></h3>
+            <div class="image-container1">
+                <img src="assets/images/box-3.1.1.jpg" alt="Image 1">
+                <img src="assets/images/box-3.1.2.jpg" alt="Image 2">
+                <img src="assets/images/box-3.1.3.jpg" alt="Image 3">
+                <img src="assets/images/box-3.1.4.jpg" alt="Image 4">
+            </div>
+            <div class="see-all"><a href="#">See all</a></div>
+        </div>
+        <div class="banner1">
+          <h3><b>Get 40% Off on Your First Order!<br>Top Trending Deals</b></h3>
+            <div class="image-container1">
+                <img src="assets/images/box-3.2.1.jpg" alt="Image 5">
+                <img src="assets/images/box-3.2.2.jpg" alt="Image 6">
+                <img src="assets/images/box-3.2.3.jpg" alt="Image 7">
+                <img src="assets/images/box-3.2.4.jpg" alt="Image 8">
+            </div>
+            <div class="see-all"><a href="#">See all</a></div>
+        </div>
+        <div class="banner1">
+          <h3><b>Spotlight's on You!<br>Starting ₹349</b></h3>
+            <div class="image-container1">
+                <img src="assets/images/box-3.4.1.jpg" alt="Image 5">
+                <img src="assets/images/box-3.4.2.jpg" alt="Image 6">
+                <img src="assets/images/box-3.4.3.jpg" alt="Image 7">
+                <img src="assets/images/box-3.4.4.jpg" alt="Image 8">
+            </div>
+            <div class="see-all"><a href="#">See all</a></div>
+        </div>
+        <div class="banner1">
+          <h3><b>Glam Feast Play Repeat! <br>Guaranteed 2 day Delivery!</b></h3>
+            <div class="image-container1">
+
+              <img src="assets/images/box-3.3.1.jpg" alt="Image 5">
+                <img src="assets/images/box-3.3.2.jpg" alt="Image 6">
+                <img src="assets/images/box-3.3.3.jpg" alt="Image 7">
+                <img src="assets/images/box-3.3.4.jpg" alt="Image 8">
+            </div>
+            <div class="see-all"><a href="#">See all</a></div>
+        </div>
+        <div class="banner2">
+          <h3><b></b></h3>
+            <div class="image-container2">
+                <img src="assets/images/show-1.jpg" alt="Image 5" width="480px" height="480px">
+            </div>
+            <!-- <div class="see-all"><a href="#">See all</a></div> -->
+        </div>
+    </div>
+
+ <!--Reviews-->
+<div class="product-carousel-section1" style="background-color: #e0dfdf;padding: 20px 0;">
+    <h2 class="text-center mb-4"><b><i>Discover Why People Love It 💕👌</i></b></h2>
+    
+    <div class="product-banner1 d-flex align-items-center">
+        <button class="carousel-control-prev" id="prev-btn4" aria-label="Previous">
+            <span class="carousel-control-prev-icon custom-icon" aria-hidden="true"></span>
+        </button>
+        <div class="product-images4 d-flex" id="product-images4">
+          
+          <figure class="product-item">
+            <img src="assets/images/rev-1.jpg" class="img-fluid">
+            <figcaption class="product-details">
+              <div>
+                <span class="fa fa-star checked" style="color:yellow;font-size:25px"></span><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span>
+              </div>
+              <div class="trust-line">
+                <span class="username"><i class="fa fa-user" style="font-size:19px" aria-hidden="true">&nbsp;&nbsp;</i>Sarthak Nagda</span>&nbsp;&nbsp;&nbsp;
+                <span class="verify">Verified</span>
+              </div>
+              <h5 style="color:rgb(41, 103, 103)">Healthy, Tasty and Filling Breakfast option.</h4>
+              <p class="product-title1">The Alpino Chocolate Oats are a wholesome and tasty breakfast option. It’s packed with oats, peanut butter, nuts, and seeds, so it feels filling and nutritious. I liked that it has no added sugar or preservatives, and the protein content is higher than regular oats
+              </p>
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/rev-2.jpg" class="img-fluid">
+            <figcaption class="product-details">
+              <div>
+                <span class="fa fa-star checked" style="color:yellow;font-size:25px"></span><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span>
+              </div>
+              <div class="trust-line">
+                <span class="username"><i class="fa fa-user" style="font-size:19px" aria-hidden="true">&nbsp;&nbsp;</i>	Devang Prajapati</span>&nbsp;&nbsp;&nbsp;
+                <span class="verify">Verified</span>
+              </div>
+              <h5 style="color:rgb(41, 103, 103)">Easy to use</h5>
+              <p class="product-title1">Wonderful product.. extremely satisfied by the ease of use but yes you need to spray it on the grease stain and leave it on after which I scraped off the stains with a knife and I also added salt to it .. I’m also attaching the BEFORE and AFTER pics of the utensils
+            </figcaption>
+          </figure>&nbsp;
+            
+          <figure class="product-item">
+            <img src="assets/images/rev-3.jpg" class="img-fluid">
+            <figcaption class="product-details">
+              <div>
+                <span class="fa fa-star checked" style="color:yellow;font-size:25px"></span><span class="fa fa-star checked" style="color:yellow;font-size:25px"><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span>
+              </div>
+              <div class="trust-line">
+                <span class="username"><i class="fa fa-user" style="font-size:19px" aria-hidden="true">&nbsp;&nbsp;</i>	Aparna Nagaraja</span>&nbsp;&nbsp;&nbsp;
+                <span class="verify">Verified</span>
+              </div>
+              <h5 style="color:rgb(41, 103, 103)">What Effective means?</h5>
+              <p class="product-title1">It is a very soft way of incapacitating mosquitoes. One needs to follow with other ways of attacking and eliminating them, either by Bat or by hand. The product does not eliminate the mosquitoes and I have not found this to be allergic on human. I find using this comfortable.
+            </figcaption>
+          </figure>&nbsp;
+            
+          <figure class="product-item">
+            <img src="assets/images/rev-4.jpg" class="img-fluid">
+            <figcaption class="product-details">
+              <div>
+                <span class="fa fa-star checked" style="color:yellow;font-size:25px"></span><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span><span class="fa fa-star checked" style="color:yellow;font-size:25px"><span class="fa fa-star checked" style="color:yellow;font-size:25px"><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span>
+              </div>
+              <div class="trust-line">
+                <span class="username"><i class="fa fa-user" style="font-size:19px" aria-hidden="true">&nbsp;&nbsp;</i>	Aditi Lagvankar</span>&nbsp;&nbsp;&nbsp;
+                <span class="verify">Verified</span>
+              </div>
+              <h5 style="color:rgb(41, 103, 103)">Beautiful jute bag</h5>
+              <p class="product-title1">V beautiful bag ! All my friends loved it , to whomever i gifted . Till now i have bgt arnd 9 of them !! I must get some reduction in price . I will be buying 3 more 😁
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/rev-5.jpg" class="img-fluid">
+            <figcaption class="product-details">
+              <div>
+                <span class="fa fa-star checked" style="color:yellow;font-size:25px"></span><span class="fa fa-star checked" style="color:yellow;font-size:25px"><span class="fa fa-star checked" style="color:yellow;font-size:25px"><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span>
+              </div>
+              <div class="trust-line">
+                <span class="username"><i class="fa fa-user" style="font-size:19px" aria-hidden="true">&nbsp;&nbsp;</i>	Jennifer Saini</span>&nbsp;&nbsp;&nbsp;
+                <span class="verify">Verified</span>
+              </div>
+              <h5 style="color:rgb(41, 103, 103)">Long-Lasting and Refreshing – Perfect for Daily Use!</h5>
+              <p class="product-title1">Definitely worth the price. I would recommend it to anyone looking for a quality, everyday fragrance.
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/rev-6.jpg" class="img-fluid">
+            <figcaption class="product-details">
+              <div>
+                </span><span class="fa fa-star checked" style="color:yellow;font-size:25px"><span class="fa fa-star checked" style="color:yellow;font-size:25px"><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span>
+              </div>
+              <div class="trust-line">
+                <span class="username"><i class="fa fa-user" style="font-size:19px" aria-hidden="true">&nbsp;&nbsp;</i>	Priya Nagarajan</span>&nbsp;&nbsp;&nbsp;
+                <span class="verify">Verified</span>
+              </div>
+              <h5 style="color:rgb(41, 103, 103)"> Beautiful figurines broken due to inadequate packing</h5>
+              <p class="product-title1">I have had to return these beautifully crafted horses twice as they arrived broken both times. The seller needs to pack them with adequate cushioning especially for long distance order. Very disappointed.
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/rev-7.jpg" class="img-fluid">
+            <figcaption class="product-details">
+              <div>
+                <span class="fa fa-star checked" style="color:yellow;font-size:25px"></span><span class="fa fa-star checked" style="color:yellow;font-size:25px"><span class="fa fa-star checked" style="color:yellow;font-size:25px"><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span>
+              </div>
+              <div class="trust-line">
+                <span class="username"><i class="fa fa-user" style="font-size:19px" aria-hidden="true">&nbsp;&nbsp;</i>Vaishali Kappagan</span>&nbsp;&nbsp;&nbsp;
+                <span class="verify">Verified</span>
+              </div>
+              <h5 style="color:rgb(41, 103, 103)">Leakage free , self watering , wheeled planter !</h5>
+              <p class="product-title1">Fabulous planter. It comes with wheels making it super easy to move the planter to give sunlight at times for the plant . It has a self watering feature which basically is a small depth storage area for excess water , at the bottom of the planter. This is good and keeps the plant fresh and there has been no spillage or leakage
+            </figcaption>
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/rev-8.jpg" class="img-fluid">
+            <figcaption class="product-details">
+              <div>
+                <span class="fa fa-star checked" style="color:yellow;font-size:25px"><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span>
+              </div>
+              <div class="trust-line">
+                <span class="username"><i class="fa fa-user" style="font-size:19px" aria-hidden="true">&nbsp;&nbsp;</i>Manali Thakur</span>&nbsp;&nbsp;&nbsp;
+                <span class="verify">Verified</span>
+              </div>
+              <h5 style="color:rgb(41, 103, 103)"> Premium Quality: Handcrafted yellow metal vase with durable powder-coated finish.</h5>
+              <p class="product-title1">Modern Shape: Bottle-style silhouette that blends with classic and contemporary décor.
+🏡 Home Décor Essential: Perfect for living room, dining table, or hallway accent.
+          </figure>&nbsp;
+
+          <figure class="product-item">
+            <img src="assets/images/rev-9.jpg" class="img-fluid">
+            <figcaption class="product-details">
+              <div>
+                <span class="fa fa-star checked" style="color:yellow;font-size:25px"><span class="fa fa-star checked" style="color:yellow;font-size:25px"></span>
+              </div>
+              <div class="trust-line">
+                <span class="username"><i class="fa fa-user" style="font-size:19px" aria-hidden="true">&nbsp;&nbsp;</i>	Niranjchana</span>&nbsp;&nbsp;&nbsp;
+                <span class="verify">Verified</span>
+              </div>
+              <h5 style="color:rgb(41, 103, 103)"> Go for it, comfortable and good looking</h5>
+              <p class="product-title1">Go for it, comfortable and good looking, fit is nice,home as well as office wear, duppatta is good length and soft, print quality is as expected from the picture given.</p>
+          </figure>&nbsp;
+
+        </div>
+        <button class="carousel-control-next" id="next-btn4" aria-label="Next">
+            <span class="carousel-control-next-icon custom-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+</div>
+
+    
+<!--Style for Product carousel-->   
+<style>
+  /* This is the CSS for the PARENT CONTAINER */
+.product-images {
+    display: flex;/* 1. Lays out all the <figure> elements in a single horizontal row */
+    overflow-x: auto; /* 2. THIS IS THE KEY: It enables horizontal scrolling when the content is too wide */
+    gap: 10px;/* (Optional) Creates a nice space between each item */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.product-images::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+/* This is the CSS for the CHILD ITEMS (your <figure> tags) */
+.product-item {
+    /* Give each item a fixed width. This causes the content to overflow the container. */
+    width: 250px; 
+    /* Prevents the items from squishing and shrinking */
+    flex-shrink: 0; 
+}
+</style>
+
+ <!-- Product Grid Section -->
+      <section id="sliderpart">
+        <div class="container my-4" style="background-color: rgb(66, 65, 65)">
+          <h2 class="section-heading text-center" style="font-family:cursive;font-size:27px;text-align: center;font-style: italic;color: rgb(232, 244, 4)"><--Pick up where you left off--></h2>
+
+          <div class="row" id="product-grid">
+            <!-- Product cards injected by JS -->
+         </div>
+        </div>
+      </section>
+
+      <button id="buy-now" class="btn btn-primary position-fixed bottom-0 end-0 m-3" style="z-index: 1000;">Buy Now</button>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script>
+      // This function runs as soon as the page content is loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        // It finds the 'english' radio button and makes sure it's checked
+        document.getElementById('english').checked = true;
+      });
+    </script>
+      
+      <script src="js/app.js"></script>
+      <script src="js/home.js"></script>
+      <script>
+      // Initialize all popovers on the page
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+      const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+    </script>
+
+</script>
+    
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const menuContainer = document.querySelector('.offcanvas-menu-container');
+    if (!menuContainer) return;
+
+    function navigateToPanel(targetPanelId, isBack = false) {
+        const currentPanel = menuContainer.querySelector('.offcanvas-panel.active');
+        const targetPanel = document.querySelector(targetPanelId);
+
+        if (currentPanel && targetPanel) {
+            if (isBack) {
+                targetPanel.classList.add('no-transition');
+                targetPanel.style.transform = 'translateX(-100%)';
+                targetPanel.offsetHeight; 
+                targetPanel.classList.remove('no-transition');
+                
+                currentPanel.style.transform = 'translateX(100%)';
+                targetPanel.style.transform = 'translateX(0)';
+            } else {
+                currentPanel.style.transform = 'translateX(-100%)';
+                targetPanel.style.transform = 'translateX(0)';
+            }
+            currentPanel.classList.remove('active');
+            targetPanel.classList.add('active');
+        }
+    }
+
+    menuContainer.addEventListener('click', function(e) {
+        const trigger = e.target.closest('.offcanvas-nav-trigger');
+        if (trigger) {
+            e.preventDefault();
+            const targetPanelId = trigger.getAttribute('href');
+            navigateToPanel(targetPanelId, false);
+        }
+    });
+
+    menuContainer.addEventListener('click', function(e) {
+        const backTrigger = e.target.closest('.offcanvas-back-trigger');
+        if (backTrigger) {
+            e.preventDefault();
+            const targetPanelId = backTrigger.getAttribute('href');
+            navigateToPanel(targetPanelId, true);
+        }
+    });
+});
+
+// Toggle Filter Dropdown
+document.getElementById("filter-toggle").addEventListener("click", (e) => {
+  e.preventDefault();
+  const dropdown = document.getElementById("filter-dropdown");
+  dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+});
+
+// Toggle All Categories Dropdown
+document.getElementById("all-categories-toggle").addEventListener("click", (e) => {
+  e.preventDefault();
+  const dropdown = document.getElementById("all-categories-dropdown");
+  dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+});
+
+// Close dropdown if clicked outside
+document.addEventListener("click", function(event) {
+  if (!event.target.closest(".nav-item-dropdown")) {
+    document.getElementById("filter-dropdown").style.display = "none";
+    document.getElementById("all-categories-dropdown").style.display = "none";
+  }
+});
+
+
+// Sidebar "All Categories" dropdown filter
+document.getElementById("sidebar-category-filter").addEventListener("change", (e) => {
+  const category = e.target.value;
+  const filtered = category === "all" ? products : products.filter(p => p.category === category);
+  renderProducts(filtered);
+});
+
+// Sidebar "Filter" checkboxes (generated same way as top filter)
+function setupSidebarFilter(products) {
+  const categoryContainer = document.getElementById("sidebar-category-checkboxes");
+  categoryContainer.innerHTML = ""; // clear old ones
+  const uniqueCategories = [...new Set(products.map(p => p.category))].sort();
+
+  uniqueCategories.forEach(category => {
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.value = category;
+    checkbox.id = `sidebar-category-${category}`;
+    checkbox.classList.add("form-check-input");
+
+    const label = document.createElement("label");
+    label.htmlFor = `sidebar-category-${category}`;
+    label.textContent = category;
+    label.classList.add("form-check-label");
+
+    const div = document.createElement("div");
+    div.classList.add("form-check");
+    div.appendChild(checkbox);
+    div.appendChild(label);
+
+    categoryContainer.appendChild(div);
+  });
+
+  // Event listener for filtering
+  categoryContainer.addEventListener("change", () => {
+    const checkedBoxes = document.querySelectorAll("#sidebar-category-checkboxes input[type='checkbox']:checked");
+    const selectedCategories = Array.from(checkedBoxes).map(cb => cb.value);
+
+    let filtered = [];
+    if (selectedCategories.length === 0) {
+      filtered = products;
+    } else {
+      filtered = products.filter(product => selectedCategories.includes(product.category));
+    }
+
+    const grid = document.getElementById("product-grid");
+    if (filtered.length === 0) {
+      grid.innerHTML = `<div class="col-12 text-center"><p>No products found in selected categories.</p></div>`;
+    } else {
+      renderProducts(filtered);
+    }
+  });
+}
+
+// Call this after products load
+setupSidebarFilter(products);
+
+</script>
+
+
+   </body>
+  
+
+
+<footer class="site-footer pt-5 pb-3">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-2 col-md-4 col-6">
+        <h6>About</h6>
+        <ul class="footer-links">
+          <li><a href="about-contact.html#contact">Contact Us</a></li>
+          <li><a href="about-contact.html#about">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">EcoKart Stories</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Corporate Information</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-6">
+        <h6>Group Companies</h6>
+        <ul class="footer-links">
+          <li><a href="#">Myntra</a></li>
+          <li><a href="#">Cleartrip</a></li>
+          <li><a href="#">Shopsy</a></li>
+        </ul>
+        <h6 class="mt-4">Help</h6>
+        <ul class="footer-links">
+          <li><a href="about-contact.html#payments">Payments</a></li>
+          <li><a href="about-contact.html#shipping">Shipping</a></li>
+          <li><a href="about-contact.html#cancellation">Cancellation & Returns</a></li>
+          <li><a href="about-contact.html#faqs">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-6">
+        <h6>Consumer Policy</h6>
+        <ul class="footer-links">
+          <li><a href="about-contact.html#cancellation">Cancellation & Returns</a></li>
+          <li><a href="#">Terms Of Use</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Sitemap</a></li>
+          <li><a href="#">Grievance Redressal</a></li>
+          <li><a href="#">EPR Compliance</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-address">
+        <h6>Mail Us</h6>
+        <p>
+          EcoKart Internet Private Limited,<br>
+          Buildings Alyssa, Begonia & Clove<br>
+          Embassy Tech Village, Outer Ring Road,<br>
+          Devarabeesanahalli Village, Bengaluru, 560103,<br>
+          Karnataka, India <br><br>
+          <i class="fa fa-envelope me-2"></i> mehulibiswas16@gmail.com
+        </p>
+        <h6 class="mt-4">Social</h6>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/mehuli-biswas-817246334/"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://github.com/Sanchita76"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-address border-start ps-4 mt-4 mt-lg-0">
+        <h6>Registered Office Address</h6>
+        <p>
+          EcoKart Internet Private Limited,<br>
+          Buildings Alyssa, Begonia & Clove<br>
+          Embassy Tech Village, Outer Ring Road,<br>
+          Devarabeesanahalli Village, Bengaluru, 560103,<br>
+          Karnataka, India<br>
+          CIN : U51109KA2012PTC066107<br>
+          Telephone: 8697065705 / 9432515072
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="row align-items-center">
+        <div class="col-md-12 col-lg-8 d-flex align-items-center bottom-bar-links">
+          <a href="#">Become a Seller</a>
+          <a href="#">Advertise</a>
+          <a href="#">Gift Cards</a>
+          <a href="#">Help Center</a>
+          <span class="ms-4">© 2007-2025 EcoKart.com</span>
+        </div>
+        <div class="col-md-12 col-lg-12 text-lg-end mt-3 mt-lg-0 payment-icons">
+          <img src="assets/images/upi-icon1.jpeg" alt="Visa">
+          <img src="assets/images/upi-icon2.png" alt="Mastercard">
+          <img src="assets/images/upi-icon3.png" alt="Rupay">
+          <img src="assets/images/upi-icon4.jpeg" alt="American Express">
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</html>
