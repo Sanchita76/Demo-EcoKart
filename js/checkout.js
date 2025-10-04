@@ -185,28 +185,13 @@ upiIcons.forEach(icon => {
   });
 });
 
-document.getElementById("upi-id").addEventListener("input", function() {
-  const upiId = this.value;
-  if (upiId.endsWith("@oksbi")) {
-    document.getElementById("verify-and-pay").disabled = false;
-    document.getElementById("upi-error-msg").textContent = "";
-  } else {
-    document.getElementById("verify-and-pay").disabled = true;
-    document.getElementById("upi-error-msg").textContent = "Invalid UPI ID";
-  }
-});
-
-
-/*New*/
-
-// Validate UPI ID (basic regex)
 const upiInput = document.getElementById("upi-id");
 const verifyBtn = document.getElementById("verify-and-pay");
 const payUpiBtn = document.getElementById("proceed-and-pay-upi");
 const upiError = document.getElementById("upi-error-msg");
 
 upiInput.addEventListener("input", () => {
-  const upiPattern = /^[\w.-]+@[\w.-]+$/;
+  const upiPattern = /^[a-zA-Z0-9.-]+@oksbi$/;
   if (upiPattern.test(upiInput.value)) {
     verifyBtn.disabled = false;
     payUpiBtn.disabled = false;
@@ -214,7 +199,7 @@ upiInput.addEventListener("input", () => {
   } else {
     verifyBtn.disabled = true;
     payUpiBtn.disabled = true;
-    upiError.textContent = "Enter a valid UPI ID (e.g. name@bank)";
+    upiError.textContent = "Enter a valid UPI ID (e.g. name@oksbi)";
   }
   updatePayButtons();
 });

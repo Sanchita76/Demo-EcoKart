@@ -33,38 +33,36 @@ function renderProduct(product) {
             <img src="${product.image} " class="img-fluid product-image" alt="${product.name}">
         </div>
         <div class="col-md-6">
-            <h1 style="color:teal"><i>${product.name}</i></h1><br>
-            <h5 style="color:green"><p>Category: ${product.category || "No category found"}</p></h5>
-            <h3 style="color:orange"><b>About this Item:</b></h3>
-            <ul>${description}</ul>
-            <h7 <label style="color:crimson">Brand : </label><span style="color:white">${product.Brand || "EcoKart Assured Product🛡️"}</span></h7><br>
-            <h7 <label style="color:crimson">Material : </label><span style="color:white">${product.Material || "EcoKart Assured Product🛡️"}</span></h7><br>
-            <h7 <label style="color:crimson">Dimensions : </label><span style="color:white">${product.ProductDimensions || "No dimensions found"}</span></h7><br>
-            <h7 <label style="color:crimson">Colour :  </label><span style="color:white">${product.Colour || "Mixture"}</span></h7><br>
-            <h7 <label style="color:crimson">Department :  </label><span style="color:white">${product.Department || "Universal Use"}</span></h7><br>
-            <h7 <label style="color:crimson">Item Model Number : </label><span style="color:white">${product.Itemmodelnumber}</span></h7><br>
-            <h7 <label style="color:crimson">Item Weight :  </label><span style="color:white">${product.ItemWeight || "<1 kg"}</span></h7><br>
-            <h7 <label style="color:crimson">Net Quantity : </label><span style="color:white">${product.NetQuantity || "1.00 count"}</span></h7><br>
-            <h7 <label style="color:crimson">Generic Name : <span style="color:white">${product.GenericName || "General purpose use"}</span></h7><br>
-            <h7 <label style="color:crimson">ASIN : <span style="color:white">${product.ASIN || "No ASIN found"}</span></h7><br>
-            <h7 <label style="color:crimson">Manufacturer : <span style="color:white">${product.Manufacturer || "EcoKart Assured Product🛡️"}</span></h7><br>
-            <h7 <label style="color:crimson">Country of Origin : <span style="color:white">${product.CountryofOrigin || "India"}</span></h7><br><br>
+            <h1 style="color:white"><i>${product.name}</i></h1><br>
+            <h5 style="color:blue;font-size:21px;font-family:cursive"><p>Category: &nbsp;${product.category || "No category found"}</p></h5>
+            <h3 style="color:indigo"><b>About this Item:</b></h3>
+            <ul style="font-size:19px;font-family:cursive;font-color:yellow">${description}</ul>
+
+            <h7 style=" font-size:24px"><label style="color:orange">Brand : &nbsp;</label><span style="font-family:cursive;color:pink">${product.Brand || "EcoKart Assured Product🛡️"}</span></h7><br>
+            <h7 style=" font-size:24px"><label style="color:orange">Material : &nbsp;</label><span style="font-family:cursive;color:pink">${product.Material || "EcoKart Assured Product🛡️"}</span></h7><br>
+            <h7 style=" font-size:24px"><label style="color:orange">Dimensions : &nbsp;</label><span style="font-family:cursive;color:pink">${product.ProductDimensions || "No dimensions found"}</span></h7><br>
+            <h7 style=" font-size:24px"><label style="color:orange">Colour : &nbsp;</label><span style="font-family:cursive;color:pink">${product.Colour || "Mixture"}</span></h7><br>
+            <h7 style=" font-size:24px"><label style="color:orange">Department : &nbsp;</label><span style="font-family:cursive;color:pink">${product.Department || "Universal Use"}</span></h7><br>
+            <h7 style=" font-size:24px"><label style="color:orange">Item Model Number : &nbsp;</label><span style="font-family:cursive;color:pink">${product.Itemmodelnumber}</span></h7><br>
+            <h7 style=" font-size:24px"><label style="color:orange">Item Weight : &nbsp;</label><span style="font-family:cursive;color:pink">${product.ItemWeight || "<1 kg"}</span></h7><br>
+            <h7 style=" font-size:24px"><label style="color:orange">Net Quantity : &nbsp;</label><span style="font-family:cursive;color:pink">${product.NetQuantity || "1.00 count"}</span></h7><br>
+            <h7 style=" font-size:24px"><label style="color:orange">Generic Name : &nbsp;</label><span style="font-family:cursive;color:pink">${product.GenericName || "General purpose use"}</span></h7><br>
+            <h7 style=" font-size:24px"><label style="color:orange">ASIN : &nbsp;</label><span style="font-family:cursive;color:pink">${product.ASIN || "No ASIN found"}</span></h7><br>
+            <h7 style=" font-size:24px"><label style="color:orange">Manufacturer : &nbsp;</label><span style="font-family:cursive;color:pink">${product.Manufacturer || "EcoKart Assured Product🛡️"}</span></h7><br>
+            <h7 style=" font-size:24px"><label style="color:orange">Country of Origin : &nbsp;</label><span style="font-family:cursive;color:pink">${product.CountryofOrigin || "India"}</span></h7><br><br>
             <h5 style="color:green">MRP : ₹${product.price.toFixed(2)}</h5>
             <div class="mb-3">
-                <label style="color:orange; font-size:18px;" for="quantity" class="form-label">Quantity</label>
+                <label style="color:teal; font-size:23px;" for="quantity" class="form-label">Quantity</label>
                 <input type="number" id="quantity" class="form-control" value="1" min="1">
             </div>
-            <button class="btn btn-success" style="color: white" onclick="handleAddToCart(${product.id})">Add to Cart</button><br><br>
+            <button class="btn btn-success" style="color: white" onclick="handleAddToCart(${product.id})">Add to Cart</button>
             
-        
-<button class="btn btn-warning" onclick="handleAddToWishlist(${product.id})">
-    <i class="fab fa-heart"></i> Add to Wishlist
-</button>
+            <button class="btn btn-warning btn-sm ms-2" onclick="handleAddToWishlist(${product.id})"><i class="fa fa-heart"></i>&nbsp;Add to Wishlist</button>
 
-<button class="btn btn-failure" onclick="removeFromCart(${product.id})">
-    <i class="fa fa-trash"></i> Remove from Cart
-</button>
-
+            <button class="btn btn-failure" onclick="removeFromCart(${product.id})">
+              <i class="fa fa-trash"></i> Remove from Cart
+            </button>
+ 
 
             <div class="col-md-6 text-center">
   <br><br><br>
@@ -87,12 +85,8 @@ function renderProduct(product) {
     `;
 };
 
-/*function handleAddToCart(productId) {
-    const quantity = parseInt(document.getElementById("quantity").value) || 1;
-    addToCart(productId, quantity);
-    updateCartCount();
-    alert("Item added to cart!");
-}*/
+/*Wishlist section*/
+ 
 
 document.getElementById("buy-now").addEventListener("click", function() {
   const cartCount = parseInt(document.getElementById("cart-count").textContent);
@@ -149,7 +143,7 @@ function handleAddToCart(productId) {
     // Notification message
     const notification = document.createElement("div");
     notification.classList.add("notification");
-    notification.innerHTML = '<span>Item added to cart</span>';
+    notification.innerHTML = '<span style="font-family:cursive">Item added to cart</span>';
     document.body.appendChild(notification);
 
     // Notification animation

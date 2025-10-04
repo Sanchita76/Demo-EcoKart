@@ -9,14 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
             setupSidebarFilter(products);
             //filter section-hidden by icon
             const filterSection = document.getElementById("filter-section");
-  filterSection.style.display = "none";
-  document.getElementById("filter-icon").addEventListener("click", () => {
-    filterSection.style.display = filterSection.style.display === "none" || filterSection.style.display === "" ? "block" : "none";
-  });
+//   filterSection.style.display = "none";
+//   document.getElementById("filter-icon").addEventListener("click", () => {
+//     filterSection.style.display = filterSection.style.display === "none" || filterSection.style.display === "" ? "block" : "none";
+//   });
         });
         
 });
-
+ 
 function renderProducts(products) {
     const grid = document.getElementById("product-grid");
     grid.innerHTML = "";
@@ -39,62 +39,7 @@ function renderProducts(products) {
         </div>`;
     });
 }
-
-
-let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-
-// Add product to wishlist
-function handleAddToWishlist(productId) {
-    const product = products.find(p => p.id === productId); // ✅ fixed
-    if (product) {
-        const existingProduct = wishlist.find(p => p.id === productId);
-        if (!existingProduct) {
-            wishlist.push(product);
-            localStorage.setItem('wishlist', JSON.stringify(wishlist));
-            updateWishlistCount();
-            renderWishlist();
-        }
-    }
-}
-
-// Render wishlist dropdown
-function renderWishlist() {
-    const wishlistDropdown = document.getElementById('wishlist-dropdown');
-    wishlistDropdown.innerHTML = '';
-
-    if (wishlist.length === 0) {
-        wishlistDropdown.innerHTML = `<p>No items in wishlist</p>`;
-    } else {
-        wishlist.forEach(product => {
-            // Inside the renderWishlist function's else block:
-const productHTML = `
-    <div class="wishlist-item">
-        <img src="${product.image}" width="50" class="wishlist-item-image">
-        <span class="wishlist-item-text">
-            ${product.name} - ₹${product.price.toFixed(2)}
-        </span>
-    </div>`;
-wishlistDropdown.insertAdjacentHTML('beforeend', productHTML);
-        });
-    }
-
-    wishlistDropdown.style.display =
-        wishlistDropdown.style.display === 'block' ? 'none' : 'block';
-}
-
-// Update wishlist count
-function updateWishlistCount() {
-    const wishlistCount = document.getElementById('wishlist-count');
-    wishlistCount.innerText = wishlist.length;
-}
-
-// Initialize wishlist on page load
-document.addEventListener('DOMContentLoaded', function () {
-    wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-    updateWishlistCount();
-});
-
-
+ 
 
 document.getElementById("buy-now").addEventListener("click", function() {
   const cartCount = parseInt(document.getElementById("cart-count").textContent);
@@ -135,6 +80,23 @@ function addToCart(productId) {
         localStorage.setItem('cart', JSON.stringify(cart));
         updateCartCount();
     }
+    // Notification message
+    const notification = document.createElement("div");
+    notification.classList.add("notification");
+    notification.innerHTML = '<span style="font-family:cursive">Added to Cart!</span>';
+    document.body.appendChild(notification);
+
+    // Notification animation
+    setTimeout(() => {
+        notification.style.right = "20px";
+    }, 100);
+
+    setTimeout(() => {
+        notification.style.right = "-300px";
+        setTimeout(() => {
+            notification.remove();
+        }, 500);
+    }, 2000);
 }
 
 function updateCartCount() {
