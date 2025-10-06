@@ -57,12 +57,13 @@ function updateBuyNowButton() {
     buyNowButton.disabled = false;
   } else {
     buyNowButton.disabled = true;
+    
   }
 }
 
 // After updating the cart count
-/*document.getElementById("cart-count").textContent = newCount;
-updateBuyNowButton();*/
+// document.getElementById("cart-count").textContent = newCount;
+// updateBuyNowButton();
 
 
 //New Thing

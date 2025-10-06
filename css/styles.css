@@ -447,6 +447,8 @@ body {
   margin: 10px; /* optional: add some spacing */
 }
 
+/*Footer styling*/
+
 .site-footer {
     background-color: #212529; /* A standard dark background */
     color: #edeeee; /* A light gray for readable text */
@@ -514,6 +516,7 @@ body {
     text-decoration: underline;
   }
 
+/*Language Dropdown Styling*/
 .language-dropdown {
     /* Sets a clean, modern system font for the entire component */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -582,6 +585,8 @@ body {
     }
   }
 
+
+/*Sidebar "All styling"*/  
   .offcanvas-menu-container {
     position: relative;
     height: 100%;
@@ -621,8 +626,7 @@ body {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* .section-below-navbar {
-} */
+/* categories styling*/
 
 .image-row {
   display: flex;
@@ -748,6 +752,8 @@ body {
     width: 200px; /* adjust image width */
     height: 200px;
 }
+
+
 
 /*Product Carousel-Showcase-1*/
 /* Ensure this selector matches the class name in your div */
@@ -980,6 +986,8 @@ body {
     text-align: center;
 }
 
+
+
 /*Product large-boxes-3*/
 /* --- Main Banner Container --- */
 .banner-container1 {
@@ -1074,7 +1082,9 @@ body {
     height: auto;
 }
 
-/*Urgent-Offer-Banner*/
+
+
+/*Limited Time-Offer-Banner*/
 .offer-banner-urgent {
             color: rgb(204, 238, 8);
             border-radius: 1px;
@@ -1136,7 +1146,9 @@ body {
     transform: scale(1.05);
 }
 
-/*Reviews Styling */
+
+
+/*User Reviews Styling */
 .trust-line {
     display: flex;
     align-items: center; /* Vertically aligns the badge and text */
@@ -1193,4 +1205,230 @@ body {
 
 .product-images4 img:hover {
     transform: scale(1.05);
+}
+
+/* --- Individual Banner "Card" Styling --- */
+.banner4 {
+    flex: 1; /* Allows each banner to grow and shrink equally */
+    min-width: 300px;
+    max-width: 500px; /* Prevents the banners from getting too narrow */
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px; /* Softer, rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* A subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    display: wrap;
+    flex-direction: column; /* Stacks the content vertically */
+}
+
+/* --- Hover Effect for the Banner Card --- */
+.banner4:hover {
+    transform: translateY(-8px); /* Lifts the card up on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12); /* A more pronounced shadow on hover */
+}
+
+/* --- Image Grid --- */
+.image-container4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; /* Increased gap for better spacing */
+    margin-bottom: 50px; /* Pushes the 'See all' link to the bottom */
+}
+
+
+
+
+
+/* ================================================== */
+/* Newsletter Component Styles                        */
+/* ================================================== */
+
+/* This wrapper provides padding and a background color for the section */
+.newsletter-section-wrapper {
+    background-color: #0d243c; /* Dark blue background from the image */
+    padding: 6rem 1rem; /* Generous padding top and bottom */
+    font-family: 'Inter', sans-serif; /* Add a font-family for consistency */
+}
+
+/* Main container for the newsletter component */
+.newsletter-container {
+    position: relative;
+    max-width: 42rem; /* max-w-2xl */
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Envelope Icon Styling */
+.envelope-wrapper {
+    position: absolute;
+    top: -2rem; /* -top-8 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.envelope-icon {
+    position: relative;
+    background-color: #facc15; /* bg-yellow-400 */
+    padding: 1rem;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    width: 80px;
+    height: 60px;
+    box-sizing: border-box;
+    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 100%, 0 100%);
+}
+
+.envelope-line-1 {
+    position: absolute;
+    top: 1rem; /* top-4 */
+    left: 0;
+    width: 100%;
+    height: 4px; /* h-1 */
+    background-color: #ca8a04; /* bg-yellow-500 */
+    opacity: 0.5;
+}
+
+.envelope-line-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid #ca8a04;
+    border-left: 2px solid #ca8a04;
+    border-right: 2px solid #ca8a04;
+    border-radius: 0.5rem 0.5rem 0 0; /* rounded-t-lg */
+    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 26%, 50% 1%, 0 26%);
+}
+
+/* Card Styling */
+.newsletter-card {
+    background-color: #ffffff;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+    padding: 2rem;
+    padding-top: 4rem; /* pt-16 */
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem; /* top-4 */
+    right: 1rem; /* right-4 */
+    color: #9ca3af; /* text-gray-400 */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.close-button:hover {
+    color: #4b5563; /* hover:text-gray-600 */
+}
+
+.close-icon {
+    width: 1.5rem; /* w-6 */
+    height: 1.5rem; /* h-6 */
+}
+
+.newsletter-title {
+    font-size: 1.5rem; /* text-2xl */
+    line-height: 2rem;
+    font-weight: 700; /* font-bold */
+    color: #1f2937; /* text-gray-800 */
+    letter-spacing: 0.05em; /* tracking-wider */
+    text-transform: uppercase;
+    margin: 0 0 0.5rem 0; /* mb-2 */
+}
+
+.newsletter-description {
+    color: #4b5563; /* text-gray-600 */
+    margin: 0 0 2rem 0; /* mb-8 */
+}
+
+/* Form Styling */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* gap-2 */
+    width: 100%;
+    max-width: 28rem; /* max-w-md */
+    margin: 0 auto;
+}
+
+.email-input {
+    width: 100%;
+    padding: 0.75rem 1.25rem; /* px-5 py-3 */
+    color: #374151; /* text-gray-700 */
+    background-color: #f3f4f6; /* bg-gray-100 */
+    border: 1px solid #e5e7eb; /* border-gray-200 */
+    border-radius: 0.375rem; /* rounded-md */
+    transition: box-shadow 0.3s, border-color 0.3s;
+    box-sizing: border-box; /* Ensures padding doesn't affect final width */
+    font-size: 1rem;
+}
+
+.email-input:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow: 0 0 0 2px #3b82f6; /* focus:ring-2 focus:ring-blue-500 */
+}
+
+.subscribe-button {
+    width: 100%;
+    padding: 0.75rem 2rem; /* px-8 py-3 */
+    font-weight: 600; /* font-semibold */
+    color: #ffffff;
+    background-color: #0d243c;
+    border: 1px solid #0d243c;
+    border-radius: 0.375rem; /* rounded-md */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    font-size: 1rem;
+}
+
+.subscribe-button:hover {
+    transform: scale(1.05); /* hover:scale-105 */
+    background-color: #1a3b5c;
+}
+
+.subscribe-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #0d243c; /* focus:ring-2 focus:ring-offset-2 */
+}
+
+/* Accessibility class for screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Styles */
+@media (min-width: 640px) { /* sm breakpoint */
+    .envelope-wrapper {
+        left: 3rem; /* sm:left-12 */
+        transform: translateX(0); /* sm:-translate-x-0 */
+    }
+
+    .newsletter-form {
+        flex-direction: row;
+    }
+
+    .subscribe-button {
+        width: auto; /* sm:w-auto */
+    }
 }

@@ -80,6 +80,23 @@ function removeFromCart(productId) {
     let cart = getCart().filter(i => i.id !== productId);
     saveCart(cart);
     updateCartCount();
+    // Notification message
+    const notification = document.createElement("div");
+    notification.classList.add("notification");
+    notification.innerHTML = '<span style="font-family:cursive">Remove from Cart!</span>';
+    document.body.appendChild(notification);
+
+    // Notification animation
+    setTimeout(() => {
+        notification.style.right = "20px";
+    }, 100);
+
+    setTimeout(() => {
+        notification.style.right = "-300px";
+        setTimeout(() => {
+            notification.remove();
+        }, 500);
+    }, 2000);
 }
 
 function updateCartCount() {

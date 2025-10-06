@@ -97,11 +97,46 @@
         <i class="fa fa-sign-in" style="font-size: 30px; color:aliceblue"></i><b>Login</b>
       </a>
       
+      <a href="#" class="text-decoration-none me-4 position-relative" 
+   style="color:rgb(241, 241, 244);" onclick="renderWishlist()">
+   <i class="fa fa-heart" style="font-size: 30px;color:aliceblue"></i>
+   <b>My Wishlist</b>
+   <span id="wishlist-count" 
+         class="position-absolute top-0 start-5 translate-middle badge rounded-pill bg-danger">0</span>
+   <div id="wishlist-dropdown" 
+      style="
+        display: none;
+        position: absolute;
+        top: 40px; /* Adjust this value to position it below a typical header/icon */
+        right: 0; /* Align to the right edge of its container (e.g., the wishlist button) */
+        width: 300px; /* Give it a decent width */
+        max-height: 400px; /* Limit height and allow scrolling for many items */
+        overflow-y: auto; /* Enable vertical scroll when max-height is reached */
+        background-color: #393838; /* Clean white background */
+        padding: 15px; /* More padding for internal space */
+        border: 1px solid #e0e0e0; /* Subtle border */
+        border-radius: 8px; /* Rounded corners for a modern look */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft, noticeable shadow */
+        z-index: 1000; /* High z-index to ensure it sits on top of other content */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clear, modern font */
+        
+        /* Target all text elements inside the dropdown */
+       #wishlist-dropdown * {
+         color: #090303 !important;
+       }   
+
+        /* Specifically target the text span if you used the recommended JS update */
+       .wishlist-item-text {
+         color: #070303 !important; /* Forces the text to be dark grey */
+         text-shadow: none !important; /* Ensure no white text-shadow is being applied */
+      }"></div>
+</a>
+
 
       <a href="#" class="text-decoration-none me-4 position-relative" style="font-size:18px;color:rgb(246, 245, 244)">
         <i class="fas fa-shipping-fast" style="font-size: 30px;color:aliceblue"></i><br><b>Orders & Returns</b>
       </a>
-
+ 
       <button class="btn btn-outline-success position-relative me-4" id="cart-button">
         <img src="assets/images/cart.jpg" alt="Cart" style="width:40px; height:40px; vertical-align:middle;">
         <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
@@ -129,6 +164,9 @@
           <li>
             <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="about-contact.html#contact">
               <i class="fa fa-address-book me-2" style="font-size: 30px;"></i> Contact Us
+            </a>
+            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="#product-images4">
+              <i class="fa fa-comments" aria-hidden="true" style="font-size: 30px;"></i> Reviews
             </a>
           </li>
         </ul>
@@ -1261,7 +1299,7 @@
               <p class="product-title1">The Alpino Chocolate Oats are a wholesome and tasty breakfast option. It’s packed with oats, peanut butter, nuts, and seeds, so it feels filling and nutritious. I liked that it has no added sugar or preservatives, and the protein content is higher than regular oats
               </p>
             </figcaption>
-          </figure>&nbsp;
+          </figure>&nbsp;&nbsp;&nbsp;&nbsp;
 
           <figure class="product-item">
             <img src="assets/images/rev-2.jpg" class="img-fluid">
@@ -1276,7 +1314,7 @@
               <h5 style="color:rgb(41, 103, 103)">Easy to use</h5>
               <p class="product-title1">Wonderful product.. extremely satisfied by the ease of use but yes you need to spray it on the grease stain and leave it on after which I scraped off the stains with a knife and I also added salt to it .. I’m also attaching the BEFORE and AFTER pics of the utensils
             </figcaption>
-          </figure>&nbsp;
+          </figure>&nbsp;&nbsp;&nbsp;
             
           <figure class="product-item">
             <img src="assets/images/rev-3.jpg" class="img-fluid">
@@ -1291,7 +1329,7 @@
               <h5 style="color:rgb(41, 103, 103)">What Effective means?</h5>
               <p class="product-title1">It is a very soft way of incapacitating mosquitoes. One needs to follow with other ways of attacking and eliminating them, either by Bat or by hand. The product does not eliminate the mosquitoes and I have not found this to be allergic on human. I find using this comfortable.
             </figcaption>
-          </figure>&nbsp;
+          </figure>&nbsp;&nbsp;&nbsp;
             
           <figure class="product-item">
             <img src="assets/images/rev-4.jpg" class="img-fluid">
@@ -1306,7 +1344,7 @@
               <h5 style="color:rgb(41, 103, 103)">Beautiful jute bag</h5>
               <p class="product-title1">V beautiful bag ! All my friends loved it , to whomever i gifted . Till now i have bgt arnd 9 of them !! I must get some reduction in price . I will be buying 3 more 😁
             </figcaption>
-          </figure>&nbsp;
+          </figure>&nbsp;&nbsp;&nbsp;&nbsp;
 
           <figure class="product-item">
             <img src="assets/images/rev-5.jpg" class="img-fluid">
@@ -1321,7 +1359,7 @@
               <h5 style="color:rgb(41, 103, 103)">Long-Lasting and Refreshing – Perfect for Daily Use!</h5>
               <p class="product-title1">Definitely worth the price. I would recommend it to anyone looking for a quality, everyday fragrance.
             </figcaption>
-          </figure>&nbsp;
+          </figure>&nbsp;&nbsp;&nbsp;&nbsp;
 
           <figure class="product-item">
             <img src="assets/images/rev-6.jpg" class="img-fluid">
@@ -1336,7 +1374,7 @@
               <h5 style="color:rgb(41, 103, 103)"> Beautiful figurines broken due to inadequate packing</h5>
               <p class="product-title1">I have had to return these beautifully crafted horses twice as they arrived broken both times. The seller needs to pack them with adequate cushioning especially for long distance order. Very disappointed.
             </figcaption>
-          </figure>&nbsp;
+          </figure>&nbsp;&nbsp;&nbsp;&nbsp;
 
           <figure class="product-item">
             <img src="assets/images/rev-7.jpg" class="img-fluid">
@@ -1351,7 +1389,7 @@
               <h5 style="color:rgb(41, 103, 103)">Leakage free , self watering , wheeled planter !</h5>
               <p class="product-title1">Fabulous planter. It comes with wheels making it super easy to move the planter to give sunlight at times for the plant . It has a self watering feature which basically is a small depth storage area for excess water , at the bottom of the planter. This is good and keeps the plant fresh and there has been no spillage or leakage
             </figcaption>
-          </figure>&nbsp;
+          </figure>&nbsp;&nbsp;&nbsp;&nbsp;
 
           <figure class="product-item">
             <img src="assets/images/rev-8.jpg" class="img-fluid">
@@ -1366,7 +1404,7 @@
               <h5 style="color:rgb(41, 103, 103)"> Premium Quality: Handcrafted yellow metal vase with durable powder-coated finish.</h5>
               <p class="product-title1">Modern Shape: Bottle-style silhouette that blends with classic and contemporary décor.
 🏡 Home Décor Essential: Perfect for living room, dining table, or hallway accent.
-          </figure>&nbsp;
+          </figure>&nbsp;&nbsp;&nbsp;&nbsp;
 
           <figure class="product-item">
             <img src="assets/images/rev-9.jpg" class="img-fluid">
@@ -1380,7 +1418,7 @@
               </div>
               <h5 style="color:rgb(41, 103, 103)"> Go for it, comfortable and good looking</h5>
               <p class="product-title1">Go for it, comfortable and good looking, fit is nice,home as well as office wear, duppatta is good length and soft, print quality is as expected from the picture given.</p>
-          </figure>&nbsp;
+          </figure>&nbsp;&nbsp;&nbsp;&nbsp;
 
         </div>
         <button class="carousel-control-next" id="next-btn4" aria-label="Next">
@@ -1415,7 +1453,7 @@
  <!-- Product Grid Section -->
       <section id="sliderpart">
         <div class="container my-4" style="background-color: rgb(66, 65, 65)">
-          <h2 class="section-heading text-center" style="font-family:cursive;font-size:27px;text-align: center;font-style: italic;color: rgb(232, 244, 4)"><--Pick up where you left off--></h2>
+          <h2 class="section-heading text-center" style="font-family:cursive;font-size:27px;text-align: center;font-style: italic;color: rgb(232, 244, 4)"><br><--Pick up where you left off--></h2>
 
           <div class="row" id="product-grid">
             <!-- Product cards injected by JS -->
@@ -1577,8 +1615,54 @@ setupSidebarFilter(products);
 
    </body>
   
+<!-- Newsletter Section -->
+    <div class="newsletter-section-wrapper">
+    <div class="newsletter-container">
+        
+        <div class="envelope-wrapper">
+             <div class="envelope-icon">
+                <div class="envelope-line-1"></div>
+                <div class="envelope-line-2"></div>
+            </div>
+        </div>
 
+        <div class="newsletter-card">
+            
+            <button class="close-button" aria-label="Close newsletter">
+                <svg xmlns="http://www.w3.org/2000/svg" class="close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <h2 class="newsletter-title">
+                NEWSLETTER
+            </h2>
+            
+            <p class="newsletter-description">
+                Keep up with our latest news and events. Subscribe to our newsletter.
+            </p>
+            
+            <form action="#" method="POST" class="newsletter-form">
+                <label for="email-address" class="sr-only">Email address</label>
+                <input 
+                    id="email-address" 
+                    name="email" 
+                    type="email" 
+                    autocomplete="email" 
+                    required 
+                    class="email-input" 
+                    placeholder="Email Address">
+                
+                <button type="submit" class="subscribe-button">
+                    SUBSCRIBE
+                </button>
+            </form>
 
+        </div>
+    </div>
+</div>
+
+<!--Footer design-->
 <footer class="site-footer pt-5 pb-3">
   <div class="container">
     <div class="row">

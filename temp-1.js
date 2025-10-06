@@ -535,36 +535,6 @@ payCardBtn.disabled = true;
 
 
 
-// function placeOrder(paymentMethod) {
-//   // ✅ Get total safely
-//   let total = 0;
-//   const totalElement = document.querySelector("#total");
-//   if (totalElement) {
-//     total = totalElement.textContent.replace("₹", "").trim();
-//   }
-
-//   // ✅ Fallback if total missing
-//   if (!total || isNaN(total)) {
-//     total = getCurrentTotal ? getCurrentTotal() : 0;
-//   }
-
-//   // ✅ Create order object
-//   const orderData = {
-//     number: "ORD" + Math.floor(Math.random() * 100000),
-//     total: total,
-//     method: paymentMethod,
-//     date: new Date().toLocaleDateString()
-//   };
-
-//   // ✅ Save to localStorage
-//   localStorage.setItem("order", JSON.stringify(orderData));
-
-//   // ✅ Clear cart
-//   localStorage.removeItem("cart");
-
-//   // ✅ Redirect
-//   window.location.href = "confirmation.html";
-// }
 function placeOrder(paymentMethod) {
   // ✅ Get total safely
   let total = 0;
@@ -573,38 +543,20 @@ function placeOrder(paymentMethod) {
     total = totalElement.textContent.replace("₹", "").trim();
   }
 
-  // ✅ Get cart details
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  // ✅ Fallback if total missing
+  if (!total || isNaN(total)) {
+    total = getCurrentTotal ? getCurrentTotal() : 0;
+  }
 
-  // ✅ Get user shipping details
-  const customer = {
-    name: `${document.getElementById("first-name").value} ${document.getElementById("last-name").value}`,
-    email: document.getElementById("email").value,
-    phone: document.getElementById("phone").value,
-    address: `${document.getElementById("address-line-1").value}, ${document.getElementById("address-line-2").value}, ${document.getElementById("city").value}, ${document.getElementById("state").value} - ${document.getElementById("zip").value}`
-  };
-
-  // ✅ Build full order object
+  // ✅ Create order object
   const orderData = {
     number: "ORD" + Math.floor(Math.random() * 100000),
     total: total,
     method: paymentMethod,
-    date: new Date().toLocaleDateString(),
-    customer: customer,
-    items: cart.map(item => {
-      const product = window.products.find(p => p.id === item.id);
-      return {
-        id: item.id,
-        name: product.name,
-        image: product.image,
-        price: product.price,
-        quantity: item.quantity,
-        subtotal: (product.price * item.quantity).toFixed(2)
-      };
-    })
+    date: new Date().toLocaleDateString()
   };
 
-  // ✅ Save order info before clearing cart
+  // ✅ Save to localStorage
   localStorage.setItem("order", JSON.stringify(orderData));
 
   // ✅ Clear cart
@@ -613,7 +565,6 @@ function placeOrder(paymentMethod) {
   // ✅ Redirect
   window.location.href = "confirmation.html";
 }
-
 
 // 🔹 UPI Payment Redirect
 if (payUpiBtn) {
