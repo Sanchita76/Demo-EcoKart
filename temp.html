@@ -4,7 +4,6 @@
       <meta charset="UTF-8" />
       <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
        <meta name="viewport" content="width=1024">
-
       <title>EcoKart - Home</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -18,22 +17,51 @@
 <!--Navbar:1-->
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: #000120;">
 <!-- <nav class="navbar navbar-expand-lg navbar-light mb-0" style="background-color: #000120;"> -->
-  <div class="container-fluid d-flex align-items-center">
+  <!-- <div class="container-fluid d-flex align-items-center"> -->
+    <!-- <div class="collapse navbar-collapse" id="navbarContent"></div>
+  <div class="container-fluid">
     <a class="navbar-brand me-5" href="index.html">
       <img src="assets/images/ecokart.jpeg" alt="EcoKart Logo" style="width: 110px; height: 90px;">
     </a>
 
-    <a href="#" class="text-decoration-none me-4 position-relative" style="color:aliceblue;">
-        <i class="fa-solid fa-location-dot" style="font-size: 40px;color:aliceblue"></i>Delivery to Kolkata 700036<br><b style="color:aliceblue; font-size:20px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Update location</b>
-      </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+  <span class="navbar-toggler-icon"></span>
+</button>
 
-      <div class="dropdown language-dropdown me-4">
-  <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-    <img src="assets/images/india.png" alt="Language" style="width: 28px; height: 28px; font-size:25px;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" class="me-2">
-    Choose Language
-  </button>
-  
-  <ul class="dropdown-menu p-2" aria-labelledby="languageDropdown">
+<div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-2 me-lg-4 mb-2 mb-lg-0"> -->
+    <!-- Logo -->
+    <a class="navbar-brand me-3" href="index.html">
+      <img src="assets/images/ecokart.jpeg" alt="EcoKart Logo" style="width: 100px; height: auto;">
+    </a>
+
+    <!-- Toggle button for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <div class="w-100">
+
+        <!-- Wrap everything inside this row -->
+        <div class="row align-items-center justify-content-between w-100 gx-2">
+
+  <!-- Location -->
+  <div class="d-none d-lg-block me-lg-3">
+    <a href="#" class="text-decoration-none position-relative text-white">
+      <i class="fa-solid fa-location-dot" style="font-size: 30px;"></i>
+      Delivery to Kolkata 700036<br>
+      <b style="font-size: 16px;">Update location</b>
+    </a>
+  </div>
+
+  <!-- Language Dropdown -->
+  <div class="dropdown language-dropdown">
+    <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+      <img src="assets/images/india.png" alt="Language" class="me-2" style="width: 24px; height: 24px;">
+      Choose Language
+    </button>
+    <ul class="dropdown-menu p-2" aria-labelledby="languageDropdown">
     <li>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="language" id="english" checked>
@@ -80,101 +108,78 @@
     <li><span class="dropdown-item-text">You are Shopping on EcoKart.com</span></li>
     <li><a class="dropdown-item text-primary" href="#">Change country/region</a></li>
   </ul>
-</div>
+</div></div>
 
-    <div class="d-flex align-items-center me-5">  
+    <!-- <div class="d-flex align-items-center me-5">  
       <div class="input-group" style="width: 1000px; height:55px">
         <span class="input-group-text"><i class="fas fa-search"></i></span>
         <input type="text" id="search-input" class="form-control" placeholder="Search Products ,Brands and More in EcoKart.com...">
         <button class="btn btn-outline-secondary" id="search-button" type="button">Search</button>
       </div>
-    </div>
-
-    <div class="d-flex align-items-center ms-auto" style="font-size:15px">
-
-      <a href="index.html" class="text-decoration-none me-4 position-relative" style="color:aliceblue;">
-        <i class="fa fa-home" style="font-size: 30px;color:aliceblue"></i> <b>Home</b>
-      </a>
-      <a href="#" class="text-decoration-none  me-4" style="color:aliceblue;">
-        <i class="fa fa-sign-in" style="font-size: 30px; color:aliceblue"></i><b>Login</b>
-      </a>
-      
-      <a href="#" class="text-decoration-none me-4 position-relative" 
-   style="color:rgb(241, 241, 244);" onclick="renderWishlist()">
-   <i class="fa fa-heart" style="font-size: 30px;color:aliceblue"></i>
-   <b>My Wishlist</b>
-   <span id="wishlist-count" 
-         class="position-absolute top-0 start-5 translate-middle badge rounded-pill bg-danger">0</span>
-   <div id="wishlist-dropdown" 
-      style="
-        display: none;
-        position: absolute;
-        top: 40px; /* Adjust this value to position it below a typical header/icon */
-        right: 0; /* Align to the right edge of its container (e.g., the wishlist button) */
-        width: 300px; /* Give it a decent width */
-        max-height: 400px; /* Limit height and allow scrolling for many items */
-        overflow-y: auto; /* Enable vertical scroll when max-height is reached */
-        background-color: #393838; /* Clean white background */
-        padding: 15px; /* More padding for internal space */
-        border: 1px solid #e0e0e0; /* Subtle border */
-        border-radius: 8px; /* Rounded corners for a modern look */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft, noticeable shadow */
-        z-index: 1000; /* High z-index to ensure it sits on top of other content */
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clear, modern font */
-        
-        /* Target all text elements inside the dropdown */
-       #wishlist-dropdown * {
-         color: #090303 !important;
-       }   
-
-        /* Specifically target the text span if you used the recommended JS update */
-       .wishlist-item-text {
-         color: #070303 !important; /* Forces the text to be dark grey */
-         text-shadow: none !important; /* Ensure no white text-shadow is being applied */
-      }"></div>
-</a>
+    </div> -->
+    <!-- <div class="col-12 col-md-8 col-lg-6">
+  <div class="input-group w-100">
+    <span class="input-group-text"><i class="fas fa-search"></i></span>
+    <input type="text" id="search-input" class="form-control" placeholder="Search Products, Brands and More">
+    <button class="btn btn-outline-secondary" id="search-button" type="button">Search</button>
+  </div>
+</div> -->
+<div class="d-flex flex-grow-1 mx-3" style="max-width: 700px; min-width: 200px;">
+  <div class="input-group w-100">
+    <span class="input-group-text"><i class="fas fa-search"></i></span>
+    <input type="text" id="search-input" class="form-control" placeholder="Search Products, Brands and More">
+    <button class="btn btn-outline-secondary" id="search-button" type="button">Search</button>
+  </div>
+</div>
 
 
-      <a href="#" class="text-decoration-none me-4 position-relative" style="font-size:18px;color:rgb(246, 245, 244)">
-        <i class="fas fa-shipping-fast" style="font-size: 30px;color:aliceblue"></i><br><b>Orders & Returns</b>
-      </a>
- 
-      <button class="btn btn-outline-success position-relative me-4" id="cart-button">
-        <img src="assets/images/cart.jpg" alt="Cart" style="width:40px; height:40px; vertical-align:middle;">
-        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-      </button>
-      <div class="dropdown">
-        <button class="btn btn-light dropdown-toggle rounded-pill d-flex align-items-center px-3" style="font-size:20px" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa fa-ellipsis-v me-2"></i>More
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-          <li>
-            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="#">
-              <i class="fa-solid fa-bell" style="font-size: 30px;"></i>&nbsp Notification Preferences
+    <!-- Links & Icons -->
+          <div class="col-12 col-lg-auto d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center text-center text-lg-start gap-2 text-white" style="font-size: 14px;">
+            <!-- Home -->
+            <a href="index.html" class="text-decoration-none text-white">
+              <i class="fa fa-home" style="font-size: 20px;"></i><br>Home
             </a>
-          </li>
-          <li>
-            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="#">
-              <i class="fa fa-headphones" style="font-size: 25px;"></i>&nbsp 24 * 7 Customer Care
+
+            <!-- Login -->
+            <a href="#" class="text-decoration-none text-white">
+              <i class="fa fa-sign-in" style="font-size: 20px;"></i><br>Login
             </a>
-          </li>
-          <li>
-            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="about-contact.html#about">
-              <i class="fa fa-circle-info me-2" style="font-size: 30px;"></i> About Us
+
+            <!-- Wishlist -->
+            <a href="#" class="position-relative text-decoration-none text-white" onclick="renderWishlist()">
+              <i class="fa fa-heart" style="font-size: 20px;"></i><br>Wishlist
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
             </a>
-          </li>
-          <li>
-            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="about-contact.html#contact">
-              <i class="fa fa-address-book me-2" style="font-size: 30px;"></i> Contact Us
+
+            <!-- Orders -->
+            <a href="#" class="text-decoration-none text-white">
+              <i class="fas fa-shipping-fast" style="font-size: 20px;"></i><br>Orders
             </a>
-            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="#product-images4">
-              <i class="fa fa-comments" aria-hidden="true" style="font-size: 30px;"></i> Reviews
-            </a>
-          </li>
-        </ul>
+
+            <!-- Cart -->
+            <button class="btn btn-outline-success position-relative p-1">
+              <img src="assets/images/cart.jpg" alt="Cart" style="width: 30px;">
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            </button>
+
+            <!-- More Dropdown -->
+            <div class="dropdown">
+              <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                <i class="fa fa-ellipsis-v"></i> More
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Notification Preferences</a></li>
+                <li><a class="dropdown-item" href="#">Customer Care</a></li>
+                <li><a class="dropdown-item" href="about-contact.html#about">About Us</a></li>
+                <li><a class="dropdown-item" href="about-contact.html#contact">Contact Us</a></li>
+                <li><a class="dropdown-item" href="#product-images4">Reviews</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
-
   </div>
 </nav>
 
@@ -1629,6 +1634,7 @@ function setupSidebarFilter(products) {
 
 // Call this after products load
 setupSidebarFilter(products);
+
 
 </script>
 

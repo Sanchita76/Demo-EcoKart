@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `;
 
-  // 💳 Payment Info
+  // // 💳 Payment Info
   const paymentHTML = `
     <div style="margin-top: 20px;">
       <h4 style="color: #0d6efd;">Payment Details</h4>
@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <p><strong>Estimated Delivery:</strong> ${new Date(Date.now() + 5*24*60*60*1000).toLocaleDateString()}</p>
     </div>
   `;
+
 
   // ✅ Final Layout
   container.innerHTML = `

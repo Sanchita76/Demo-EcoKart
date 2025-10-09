@@ -110,6 +110,7 @@ function applyCoupon() {
     }
 }
 
+
 function updateCartCount() {
     const cart = getCart();
     let count = 0;
@@ -132,6 +133,7 @@ const custbtn=document.getElementById("continue-to-payment");
 const cardpay=document.getElementById("proceed-and-pay");
 const upipay=document.getElementById("proceed-and-pay-upi");
 const customerInfoSection = document.getElementById("customer-info");
+
 
 // Function to update button state
 function updateProceedButtonState() {
@@ -196,24 +198,50 @@ upiIcons.forEach(icon => {
   });
 });
 
-const upiInput = document.getElementById("upi-id");
-const verifyBtn = document.getElementById("verify-and-pay");
-const payUpiBtn = document.getElementById("proceed-and-pay-upi");
-const upiError = document.getElementById("upi-error-msg");
+// const upiInput = document.getElementById("upi-id");
+// const verifyBtn = document.getElementById("verify-and-pay");
+// const payUpiBtn = document.getElementById("proceed-and-pay-upi");
+// const upiError = document.getElementById("upi-error-msg");
+document.addEventListener("DOMContentLoaded", () => {
+  const upiInput = document.getElementById("upi-id");
+  const verifyBtn = document.getElementById("verify-and-pay");
+  const payUpiBtn = document.getElementById("proceed-and-pay-upi");
+  const upiError = document.getElementById("upi-error-msg");
 
-upiInput.addEventListener("input", () => {
-  const upiPattern = /^[a-zA-Z0-9.-]+@oksbi$/;
-  if (upiPattern.test(upiInput.value)) {
-    verifyBtn.disabled = false;
-    payUpiBtn.disabled = false;
-    upiError.textContent = "";
+   // Initially disable all UPI buttons
+  if (verifyBtn) verifyBtn.disabled = true;
+  if (payUpiBtn) payUpiBtn.disabled = true;
 
-  } else {
-    verifyBtn.disabled = true;
-    payUpiBtn.disabled = true;
-    upiError.textContent = "Enter a valid UPI ID (e.g. name@oksbi)";
+// upiInput.addEventListener("input", () => {
+//   const upiPattern = /^[a-zA-Z0-9.-]+@oksbi$/;
+//   if (upiPattern.test(upiInput.value)) {
+//     verifyBtn.disabled = false;
+//     payUpiBtn.disabled = false;
+//     upiError.textContent = "";
+
+//   } else {
+//     verifyBtn.disabled = true;
+//     payUpiBtn.disabled = true;
+//     upiError.textContent = "Enter a valid UPI ID (e.g. name@oksbi)";
+//   }
+//   updatePayButtons();
+// });
+
+if (upiInput) {
+    upiInput.addEventListener("input", () => {
+      const upiPattern = /^[a-zA-Z0-9.-]+@oksbi$/;
+      if (upiPattern.test(upiInput.value)) {
+        verifyBtn.disabled = false;
+        payUpiBtn.disabled = false;
+        upiError.textContent = "";
+      } else {
+        verifyBtn.disabled = true;
+        payUpiBtn.disabled = true;
+        upiError.textContent = "Enter a valid UPI ID (e.g. name@oksbi)";
+      }
+      updatePayButtons();
+    });
   }
-  updatePayButtons();
 });
 
 // Update Pay Button amounts dynamically
@@ -362,25 +390,29 @@ if (!addressLine1Regex.test(addressLine1)) {
 }
 
   // Validate address line 2 (Compulsory Field)
+// ✅ Validate address line 2 (Compulsory Field, must contain at least one alphabet)
+const addressLine2Regex = /^(?=.*[A-Za-z])[A-Za-z0-9\s,.'-]{10,}$/;
 
-// This regex checks for a string that is at least 10 characters long and contains
-// letters, numbers, and common address punctuation like spaces, commas, periods, and hyphens.
-const addressLine2Regex = /^[a-zA-Z0-9\s,.'-]{10,}$/;
+// Explanation:
+// (?=.*[A-Za-z]) → ensures at least one alphabet character (so not just digits or spaces)
+// [A-Za-z0-9\s,.'-]{10,} → allows letters, numbers, spaces, commas, periods, apostrophes, hyphens
+// {10,} → must be minimum 10 characters long
 
-// A simple if/else is better for a compulsory field.
-// This single condition checks if the input is either too short, empty, or contains invalid characters.
-if (!addressLine2Regex.test(addressLine2)) {
-  document.getElementById("address-line-2-error").textContent = "Please enter a valid address (at least 10 characters).";
-  document.getElementById("address-line-2").classList.remove("is-valid"); // Ensure is-valid is removed on failure
+if (!addressLine2Regex.test(addressLine2.trim())) {
+  document.getElementById("address-line-2-error").textContent =
+    "Please enter a valid address (must include letters, not just digits/spaces, min 10 chars).";
+  document.getElementById("address-line-2").classList.remove("is-valid");
   document.getElementById("address-line-2").classList.add("is-invalid");
   return false;
-}
-// This block runs only if the validation is successful.
-else {
-  document.getElementById("address-line-2-error").textContent = ""; // Clear any previous error message
+} else {
+  document.getElementById("address-line-2-error").textContent = "";
   document.getElementById("address-line-2").classList.remove("is-invalid");
   document.getElementById("address-line-2").classList.add("is-valid");
 }
+
+
+
+  // Validate city and state
   // Define the new, more flexible regex for names (cities, states, etc.)
 // This regex supports letters, including international ones, plus common separators like hyphens, periods, spaces, and apostrophes.
 const nameRegex = /^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$/;
@@ -424,30 +456,62 @@ if (!nameRegex.test(state) || state.length < 3) { // Using the same new regex an
   return true;
 }
 
+// function checkValidationStatus() {
+//   const isValid = validateCustomerInfo();
+//   const continueButton = document.getElementById("continue-to-payment");
+//   if (isValid) {
+//     continueButton.disabled = false;
+    
+//     verifyBtn.disabled = false;
+//     payUpiBtn.disabled = false;
+//     upiError.textContent = "";
+//     payCardBtn.disabled = false;
+//     cardpay.disabled=false;
+//     upipay.disabled=false;
+//     checkValidationStatus();
+//   } else {
+//     continueButton.disabled = true;
+//     cardpay.disabled=true;
+//     upipay.disabled=true;
+//     checkValidationStatus();
+//   }
+// }
+
 function checkValidationStatus() {
   const isValid = validateCustomerInfo();
+
   const continueButton = document.getElementById("continue-to-payment");
+  const payUpiBtn = document.getElementById("proceed-and-pay-upi");
+  const payCardBtn = document.getElementById("proceed-and-pay-card");
+  const upiError = document.getElementById("upi-error-msg");
+
+  // 🔹 Control "Continue to Payment" button
+  if (continueButton) continueButton.disabled = !isValid;
+
+  // 🔹 Control payment buttons dynamically
   if (isValid) {
-    continueButton.disabled = false;
-    
-    verifyBtn.disabled = false;
-    payUpiBtn.disabled = false;
-    upiError.textContent = "";
-    payCardBtn.disabled = false;
-    cardpay.disabled=false;
-    upipay.disabled=false;
-    checkValidationStatus();
+    // When form becomes valid again, re-enable pay buttons if the payment section is visible
+    if (document.getElementById("payment-section")?.style.display !== "none") {
+      if (payUpiBtn) payUpiBtn.disabled = false;
+      if (payCardBtn) payCardBtn.disabled = false;
+      if (upiError) upiError.textContent = "";
+    }
   } else {
-    continueButton.disabled = true;
-    cardpay.disabled=true;
-    upipay.disabled=true;
-    checkValidationStatus();
+    // If invalid, disable all payment options immediately
+    if (payUpiBtn) payUpiBtn.disabled = true;
+    if (payCardBtn) payCardBtn.disabled = true;
+    if (upiError) upiError.textContent = "";
   }
+}
+
+// 🔹 Listen for input changes in the customer form continuously
+const customerForm = document.getElementById("customer-form");
+if (customerForm) {
+  customerForm.addEventListener("input", checkValidationStatus);
 }
 
 // Call this function on input change
 document.getElementById("customer-form").addEventListener("input", checkValidationStatus);
-
 
 
 // function updateTotalDisplay(total) {
@@ -514,6 +578,9 @@ const cardNumberInput = document.getElementById("card-number");
 const cvvInput = document.getElementById("cvv");
 const payCardBtn = document.getElementById("proceed-and-pay");
 
+  // Initially disable Pay button(New)
+  payCardBtn.disabled = true;
+
 function validateCardForm() {
   const cardNumber = cardNumberInput.value.trim();
   const cvv = cvvInput.value.trim();
@@ -530,41 +597,19 @@ function validateCardForm() {
 cardNumberInput.addEventListener("input", validateCardForm);
 cvvInput.addEventListener("input", validateCardForm);
 
-// Initially disable Pay button
-payCardBtn.disabled = true;
+// // Initially disable Pay button
+// payCardBtn.disabled = true;
 
+// ---- Disable Payment Buttons Initially ----(New)
+  function initializePaymentButtons() {
+    if (verifyBtn) verifyBtn.disabled = true;
+    if (payUpiBtn) payUpiBtn.disabled = true;
+    if (payCardBtn) payCardBtn.disabled = true;
+  }
 
+  initializePaymentButtons();
 
-// function placeOrder(paymentMethod) {
-//   // ✅ Get total safely
-//   let total = 0;
-//   const totalElement = document.querySelector("#total");
-//   if (totalElement) {
-//     total = totalElement.textContent.replace("₹", "").trim();
-//   }
-
-//   // ✅ Fallback if total missing
-//   if (!total || isNaN(total)) {
-//     total = getCurrentTotal ? getCurrentTotal() : 0;
-//   }
-
-//   // ✅ Create order object
-//   const orderData = {
-//     number: "ORD" + Math.floor(Math.random() * 100000),
-//     total: total,
-//     method: paymentMethod,
-//     date: new Date().toLocaleDateString()
-//   };
-
-//   // ✅ Save to localStorage
-//   localStorage.setItem("order", JSON.stringify(orderData));
-
-//   // ✅ Clear cart
-//   localStorage.removeItem("cart");
-
-//   // ✅ Redirect
-//   window.location.href = "confirmation.html";
-// }
+// ---- Place Order Function ----
 function placeOrder(paymentMethod) {
   // ✅ Get total safely
   let total = 0;
@@ -634,9 +679,6 @@ if (payCardBtn) {
     }
   });
 }
-
-
-
 
 
 // ---- Redirect to confirmation.html after successful payment ----

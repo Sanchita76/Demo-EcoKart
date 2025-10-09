@@ -1432,3 +1432,19 @@ body {
         width: auto; /* sm:w-auto */
     }
 }
+
+@media (max-width: 768px) {
+  #wishlist-dropdown {
+    width: 100% !important;
+    right: 0 !important;
+    left: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    font-size: 14px;
+    padding: 0.5rem;
+  }
+}
+
