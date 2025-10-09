@@ -202,47 +202,83 @@ upiIcons.forEach(icon => {
 // const verifyBtn = document.getElementById("verify-and-pay");
 // const payUpiBtn = document.getElementById("proceed-and-pay-upi");
 // const upiError = document.getElementById("upi-error-msg");
-document.addEventListener("DOMContentLoaded", () => {
-  const upiInput = document.getElementById("upi-id");
-  const verifyBtn = document.getElementById("verify-and-pay");
-  const payUpiBtn = document.getElementById("proceed-and-pay-upi");
-  const upiError = document.getElementById("upi-error-msg");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const upiInput = document.getElementById("upi-id");
+//   const verifyBtn = document.getElementById("verify-and-pay");
+//   const payUpiBtn = document.getElementById("proceed-and-pay-upi");
+//   const upiError = document.getElementById("upi-error-msg");
 
-   // Initially disable all UPI buttons
-  if (verifyBtn) verifyBtn.disabled = true;
-  if (payUpiBtn) payUpiBtn.disabled = true;
+//    // Initially disable all UPI buttons
+//   if (verifyBtn) verifyBtn.disabled = true;
+//   if (payUpiBtn) payUpiBtn.disabled = true;
+// document.addEventListener("DOMContentLoaded", () => {
+//   const upiInput = document.getElementById("upi-id");
+//   const verifyBtn = document.getElementById("verify-and-pay");
+//   const payUpiBtn = document.getElementById("proceed-and-pay-upi");
+//   const upiError = document.getElementById("upi-error-msg");
 
-// upiInput.addEventListener("input", () => {
-//   const upiPattern = /^[a-zA-Z0-9.-]+@oksbi$/;
-//   if (upiPattern.test(upiInput.value)) {
-//     verifyBtn.disabled = false;
-//     payUpiBtn.disabled = false;
-//     upiError.textContent = "";
+//   const cardNumberInput = document.getElementById("card-number");
+//   const cvvInput = document.getElementById("cvv");
+//   const payCardBtn = document.getElementById("proceed-and-pay");
 
-//   } else {
-//     verifyBtn.disabled = true;
-//     payUpiBtn.disabled = true;
-//     upiError.textContent = "Enter a valid UPI ID (e.g. name@oksbi)";
+//   // ✅ Disable all payment buttons initially
+//   if (verifyBtn) verifyBtn.disabled = true;
+//   if (payUpiBtn) payUpiBtn.disabled = true;
+//   if (payCardBtn) payCardBtn.disabled = true;
+
+
+// // // upiInput.addEventListener("input", () => {
+// // //   const upiPattern = /^[a-zA-Z0-9.-]+@oksbi$/;
+// // //   if (upiPattern.test(upiInput.value)) {
+// // //     verifyBtn.disabled = false;
+// // //     payUpiBtn.disabled = false;
+// // //     upiError.textContent = "";
+
+// // //   } else {
+// // //     verifyBtn.disabled = true;
+// // //     payUpiBtn.disabled = true;
+// // //     upiError.textContent = "Enter a valid UPI ID (e.g. name@oksbi)";
+// // //   }
+// // //   updatePayButtons();
+// // // });
+
+//     //UPI Validation with Customer Info Check
+//       if (upiInput) {
+//     upiInput.addEventListener("input", () => {
+//       const upiPattern = /^[a-zA-Z0-9.-]+@oksbi$/;
+// //       if (upiPattern.test(upiInput.value)) {
+// //         verifyBtn.disabled = false;
+// //         payUpiBtn.disabled = false;
+// //         upiError.textContent = "";
+// //       } else {
+// //         verifyBtn.disabled = true;
+// //         payUpiBtn.disabled = true;
+// //         upiError.textContent = "Enter a valid UPI ID (e.g. name@oksbi)";
+// //       }
+// //       updatePayButtons();
+// //     });
+// //   }
+// // });
+
+//       const isUPIValid = upiPattern.test(upiInput.value.trim());
+//       const isShippingValid = validateCustomerInfo();
+
+//       if (isUPIValid && isShippingValid) {
+//         verifyBtn.disabled = false;
+//         payUpiBtn.disabled = false;
+//         upiError.textContent = "";
+//       } else {
+//         verifyBtn.disabled = true;
+//         payUpiBtn.disabled = true;
+//         if (!isUPIValid && upiInput.value.trim() !== "") {
+//           upiError.textContent = "Enter a valid UPI ID (e.g. name@oksbi)";
+//         } else {
+//           upiError.textContent = "";
+//         }
+//       }
+//       updatePayButtons();
+//     });
 //   }
-//   updatePayButtons();
-// });
-
-if (upiInput) {
-    upiInput.addEventListener("input", () => {
-      const upiPattern = /^[a-zA-Z0-9.-]+@oksbi$/;
-      if (upiPattern.test(upiInput.value)) {
-        verifyBtn.disabled = false;
-        payUpiBtn.disabled = false;
-        upiError.textContent = "";
-      } else {
-        verifyBtn.disabled = true;
-        payUpiBtn.disabled = true;
-        upiError.textContent = "Enter a valid UPI ID (e.g. name@oksbi)";
-      }
-      updatePayButtons();
-    });
-  }
-});
 
 // Update Pay Button amounts dynamically
 function updatePayButtons() {
@@ -566,7 +602,11 @@ function isValidCardNumber(number) {
     firstDigit === "6"; // Discover
 
   return sum % 10 === 0 && validPrefix;
+
+  
 }
+
+
 
 // ---- CVV Validation ----
 function isValidCVV(cvv) {
@@ -574,12 +614,12 @@ function isValidCVV(cvv) {
 }
 
 // ---- Attach Listeners ----
-const cardNumberInput = document.getElementById("card-number");
-const cvvInput = document.getElementById("cvv");
-const payCardBtn = document.getElementById("proceed-and-pay");
+// const cardNumberInput = document.getElementById("card-number");
+// const cvvInput = document.getElementById("cvv");
+// const payCardBtn = document.getElementById("proceed-and-pay");
 
   // Initially disable Pay button(New)
-  payCardBtn.disabled = true;
+  // payCardBtn.disabled = true;
 
 function validateCardForm() {
   const cardNumber = cardNumberInput.value.trim();
@@ -594,96 +634,152 @@ function validateCardForm() {
 
 
 // Run validation on input
-cardNumberInput.addEventListener("input", validateCardForm);
-cvvInput.addEventListener("input", validateCardForm);
+// cardNumberInput.addEventListener("input", validateCardForm);
+// cvvInput.addEventListener("input", validateCardForm);
 
 // // Initially disable Pay button
 // payCardBtn.disabled = true;
 
 // ---- Disable Payment Buttons Initially ----(New)
-  function initializePaymentButtons() {
-    if (verifyBtn) verifyBtn.disabled = true;
-    if (payUpiBtn) payUpiBtn.disabled = true;
-    if (payCardBtn) payCardBtn.disabled = true;
-  }
+  // function initializePaymentButtons() {
+  //   if (verifyBtn) verifyBtn.disabled = true;
+  //   if (payUpiBtn) payUpiBtn.disabled = true;
+  //   if (payCardBtn) payCardBtn.disabled = true;
+  // }
 
-  initializePaymentButtons();
-
-// ---- Place Order Function ----
-function placeOrder(paymentMethod) {
-  // ✅ Get total safely
-  let total = 0;
-  const totalElement = document.querySelector("#total");
-  if (totalElement) {
-    total = totalElement.textContent.replace("₹", "").trim();
-  }
-
-  // ✅ Get cart details
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  // ✅ Get user shipping details
-  const customer = {
-    name: `${document.getElementById("first-name").value} ${document.getElementById("last-name").value}`,
-    email: document.getElementById("email").value,
-    phone: document.getElementById("phone").value,
-    address: `${document.getElementById("address-line-1").value}, ${document.getElementById("address-line-2").value}, ${document.getElementById("city").value}, ${document.getElementById("state").value} - ${document.getElementById("zip").value}`
-  };
-
-  // ✅ Build full order object
-  const orderData = {
-    number: "ORD" + Math.floor(Math.random() * 100000),
-    total: total,
-    method: paymentMethod,
-    date: new Date().toLocaleDateString(),
-    customer: customer,
-    items: cart.map(item => {
-      const product = window.products.find(p => p.id === item.id);
-      return {
-        id: item.id,
-        name: product.name,
-        image: product.image,
-        price: product.price,
-        quantity: item.quantity,
-        subtotal: (product.price * item.quantity).toFixed(2)
-      };
-    })
-  };
-
-  // ✅ Save order info before clearing cart
-  localStorage.setItem("order", JSON.stringify(orderData));
-
-  // ✅ Clear cart
-  localStorage.removeItem("cart");
-
-  // ✅ Redirect
-  window.location.href = "confirmation.html";
-}
+  // initializePaymentButtons();
 
 
-// 🔹 UPI Payment Redirect
-if (payUpiBtn) {
-  payUpiBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (!payUpiBtn.disabled) {
-      placeOrder("UPI");
-    }
-  });
-}
 
-// 🔹 Card Payment Redirect
-if (payCardBtn) {
-  payCardBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (!payCardBtn.disabled) {
-      placeOrder("Card");
-    }
-  });
-}
+// // ---- Place Order Function ----
+// function placeOrder(paymentMethod) {
+//   // ✅ Get total safely
+//   let total = 0;
+//   const totalElement = document.querySelector("#total");
+//   if (totalElement) {
+//     total = totalElement.textContent.replace("₹", "").trim();
+//   }
 
+//   // ✅ Get cart details
+//   const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// ---- Redirect to confirmation.html after successful payment ----
+//   // ✅ Get user shipping details
+//   const customer = {
+//     name: `${document.getElementById("first-name").value} ${document.getElementById("last-name").value}`,
+//     email: document.getElementById("email").value,
+//     phone: document.getElementById("phone").value,
+//     address: `${document.getElementById("address-line-1").value}, ${document.getElementById("address-line-2").value}, ${document.getElementById("city").value}, ${document.getElementById("state").value} - ${document.getElementById("zip").value}`
+//   };
 
-// UPI Payment Redirect
+//   // ✅ Build full order object
+//   const orderData = {
+//     number: "ORD" + Math.floor(Math.random() * 100000),
+//     total: total,
+//     method: paymentMethod,
+//     date: new Date().toLocaleDateString(),
+//     customer: customer,
+//     items: cart.map(item => {
+//       const product = window.products.find(p => p.id === item.id);
+//       return {
+//         id: item.id,
+//         name: product.name,
+//         image: product.image,
+//         price: product.price,
+//         quantity: item.quantity,
+//         subtotal: (product.price * item.quantity).toFixed(2)
+//       };
+//     })
+//   };
+
+//   // ✅ Save order info before clearing cart
+//   localStorage.setItem("order", JSON.stringify(orderData));
+
+//   // ✅ Clear cart
+//   localStorage.removeItem("cart");
+
+//   // ✅ Redirect
+//   window.location.href = "http://127.0.0.1:5500/confirmation.html";
+// }
+
+// // 🔹 UPI Payment Redirect
+// if (payUpiBtn) {
+//   payUpiBtn.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     if (!payUpiBtn.disabled) {
+//       placeOrder("UPI");
+//     }
+//   });
+// }
+
+// // 🔹 Card Payment Redirect
+// if (payCardBtn) {
+//   payCardBtn.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     if (!payCardBtn.disabled) {
+//       placeOrder("Card");
+//     }
+//   });
+// }
+
+// // --- Place Order ---
+//   function placeOrder(paymentMethod) {
+//     let total = 0;
+//     const totalElement = document.querySelector("#total");
+//     if (totalElement) total = totalElement.textContent.replace("₹", "").trim();
+
+//     const cart = JSON.parse(localStorage.getItem("cart")) || [];
+//     const customer = {
+//       name: `${document.getElementById("first-name").value} ${document.getElementById("last-name").value}`,
+//       email: document.getElementById("email").value,
+//       phone: document.getElementById("phone").value,
+//       address: `${document.getElementById("address-line-1").value}, ${document.getElementById("address-line-2").value}, ${document.getElementById("city").value}, ${document.getElementById("state").value} - ${document.getElementById("zip").value}`
+//     };
+
+//     const orderData = {
+//       number: "ORD" + Math.floor(Math.random() * 100000),
+//       total,
+//       method: paymentMethod,
+//       date: new Date().toLocaleDateString(),
+//       customer,
+//       items: cart.map(item => {
+//         const product = window.products.find(p => p.id === item.id);
+//         return {
+//           id: item.id,
+//           name: product.name,
+//           image: product.image,
+//           price: product.price,
+//           quantity: item.quantity,
+//           subtotal: (product.price * item.quantity).toFixed(2)
+//         };
+//       })
+//     };
+
+//     localStorage.setItem("order", JSON.stringify(orderData));
+//     localStorage.removeItem("cart");
+
+//     // Redirect to confirmation page ✅
+//     window.location.href = "confirmation.html";
+//   }
+
+//   // --- Attach Payment Listeners ---
+//   if (payUpiBtn) {
+//     payUpiBtn.addEventListener("click", (e) => {
+//       e.preventDefault();
+//       if (!payUpiBtn.disabled) placeOrder("UPI");
+//     });
+//   }
+
+//   if (payCardBtn) {
+//     payCardBtn.addEventListener("click", (e) => {
+//       e.preventDefault();
+//       if (!payCardBtn.disabled) placeOrder("Card");
+//     });
+//   }
+//     // });
+
+// //---- Redirect to confirmation.html after successful payment ----
+
+// //UPI Payment Redirect
 // payUpiBtn.addEventListener("click", (e) => {
 //   e.preventDefault(); // prevent form submit/reload
 //   if (!payUpiBtn.disabled) {
@@ -735,3 +831,174 @@ if (payCardBtn) {
 //     saveOrderAndRedirect("UPI");
 //   }
 // });
+
+
+// --- UPI & Card Button Initialization and Validation ---
+
+document.addEventListener("DOMContentLoaded", () => {
+  const upiInput = document.getElementById("upi-id");
+  const verifyBtn = document.getElementById("verify-and-pay");
+  const payUpiBtn = document.getElementById("proceed-and-pay-upi");
+  const upiError = document.getElementById("upi-error-msg");
+
+  const cardNumberInput = document.getElementById("card-number");
+  const cvvInput = document.getElementById("cvv");
+  const payCardBtn = document.getElementById("proceed-and-pay");
+
+  // ✅ Disable all payment buttons initially
+  if (verifyBtn) verifyBtn.disabled = true;
+  if (payUpiBtn) payUpiBtn.disabled = true;
+  if (payCardBtn) payCardBtn.disabled = true;
+
+
+// // upiInput.addEventListener("input", () => {
+// //   const upiPattern = /^[a-zA-Z0-9.-]+@oksbi$/;
+// //   if (upiPattern.test(upiInput.value)) {
+// //     verifyBtn.disabled = false;
+// //     payUpiBtn.disabled = false;
+// //     upiError.textContent = "";
+
+// //   } else {
+// //     verifyBtn.disabled = true;
+// //     payUpiBtn.disabled = true;
+// //     upiError.textContent = "Enter a valid UPI ID (e.g. name@oksbi)";
+// //   }
+// //   updatePayButtons();
+// // });
+
+    //UPI Validation with Customer Info Check
+      if (upiInput) {
+    upiInput.addEventListener("input", () => {
+      const upiPattern = /^[a-zA-Z0-9.-]+@oksbi$/;
+//       if (upiPattern.test(upiInput.value)) {
+//         verifyBtn.disabled = false;
+//         payUpiBtn.disabled = false;
+//         upiError.textContent = "";
+//       } else {
+//         verifyBtn.disabled = true;
+//         payUpiBtn.disabled = true;
+//         upiError.textContent = "Enter a valid UPI ID (e.g. name@oksbi)";
+//       }
+//       updatePayButtons();
+//     });
+//   }
+// });
+
+      const isUPIValid = upiPattern.test(upiInput.value.trim());
+      const isShippingValid = validateCustomerInfo();
+
+      if (isUPIValid && isShippingValid) {
+        verifyBtn.disabled = false;
+        payUpiBtn.disabled = false;
+        upiError.textContent = "";
+      } else {
+        verifyBtn.disabled = true;
+        payUpiBtn.disabled = true;
+        if (!isUPIValid && upiInput.value.trim() !== "") {
+          upiError.textContent = "Enter a valid UPI ID (e.g. name@oksbi)";
+        } else {
+          upiError.textContent = "";
+        }
+      }
+      updatePayButtons();
+    });
+  }
+
+  // --- Card Validation ---
+  function validateCardForm() {
+    const cardNumber = cardNumberInput?.value.trim() || "";
+    const cvv = cvvInput?.value.trim() || "";
+    const isCardValid = isValidCardNumber(cardNumber) && isValidCVV(cvv);
+    const isShippingValid = validateCustomerInfo();
+
+    if (isCardValid && isShippingValid) {
+      payCardBtn.disabled = false;
+    } else {
+      payCardBtn.disabled = true;
+    }
+  }
+
+  if (cardNumberInput && cvvInput) {
+    cardNumberInput.addEventListener("input", validateCardForm);
+    cvvInput.addEventListener("input", validateCardForm);
+  }
+
+  // --- Live Shipping Form Watcher ---
+  const customerForm = document.getElementById("customer-form");
+  if (customerForm) {
+    customerForm.addEventListener("input", () => {
+      const isShippingValid = validateCustomerInfo();
+
+      // 🔹 Disable/Enable Continue Button
+      const continueBtn = document.getElementById("continue-to-payment");
+      if (continueBtn) continueBtn.disabled = !isShippingValid;
+
+      // 🔹 Disable payment buttons if shipping invalid
+      if (!isShippingValid) {
+        if (payUpiBtn) payUpiBtn.disabled = true;
+        if (verifyBtn) verifyBtn.disabled = true;
+        if (payCardBtn) payCardBtn.disabled = true;
+      } else {
+        // recheck current method’s validity
+        validateCardForm();
+        if (upiInput) upiInput.dispatchEvent(new Event("input"));
+      }
+    });
+  }
+
+  // --- Place Order ---
+  function placeOrder(paymentMethod) {
+    let total = 0;
+    const totalElement = document.querySelector("#total");
+    if (totalElement) total = totalElement.textContent.replace("₹", "").trim();
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const customer = {
+      name: `${document.getElementById("first-name").value} ${document.getElementById("last-name").value}`,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      address: `${document.getElementById("address-line-1").value}, ${document.getElementById("address-line-2").value}, ${document.getElementById("city").value}, ${document.getElementById("state").value} - ${document.getElementById("zip").value}`
+    };
+
+    const orderData = {
+      number: "ORD" + Math.floor(Math.random() * 100000),
+      total,
+      method: paymentMethod,
+      date: new Date().toLocaleDateString(),
+      customer,
+      items: cart.map(item => {
+        const product = window.products.find(p => p.id === item.id);
+        return {
+          id: item.id,
+          name: product.name,
+          image: product.image,
+          price: product.price,
+          quantity: item.quantity,
+          subtotal: (product.price * item.quantity).toFixed(2)
+        };
+      })
+    };
+
+    localStorage.setItem("order", JSON.stringify(orderData));
+    localStorage.removeItem("cart");
+
+    // Redirect to confirmation page ✅
+    window.location.href = "confirmation.html";
+  }
+
+  // --- Attach Payment Listeners ---
+  if (payUpiBtn) {
+    payUpiBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (!payUpiBtn.disabled) placeOrder("UPI");
+    });
+  }
+
+  if (payCardBtn) {
+    payCardBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (!payCardBtn.disabled) placeOrder("Card");
+    });
+  }
+});
+
