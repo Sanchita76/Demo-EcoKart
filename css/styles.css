@@ -7,7 +7,7 @@ body {
   background-position: center;
   background-attachment: scroll;
   background-repeat: no-repeat;
-  /* background-color: white; */
+  background-color: rgb(238, 241, 237);
 }
 
 .custom-link {

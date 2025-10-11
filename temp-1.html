@@ -14,296 +14,234 @@
 
     
 <!--Navbar:1-->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: #000120;">
-<!-- <nav class="navbar navbar-expand-lg navbar-light mb-0" style="background-color: #000120;"> -->
-  <div class="container-fluid d-flex align-items-center">
-    <a class="navbar-brand me-5" href="index.html">
+  <div class="container-fluid">
+
+    <!-- Brand Logo -->
+    <a class="navbar-brand me-3" href="index.html">
       <img src="assets/images/ecokart.jpeg" alt="EcoKart Logo" style="width: 110px; height: 90px;">
     </a>
 
-    <a href="#" class="text-decoration-none me-4 position-relative" style="color:aliceblue;">
-        <i class="fa-solid fa-location-dot" style="font-size: 40px;color:aliceblue"></i>Delivery to Kolkata 700036<br><b style="color:aliceblue; font-size:20px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Update location</b>
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+
+      <!-- Location -->
+      <a href="#" class="text-decoration-none me-3 mt-2 mt-lg-0" style="color:aliceblue;">
+        <i class="fa-solid fa-location-dot" style="font-size: 30px;"></i>
+        <span style="font-size: 14px; display:block;">Delivery to Kolkata 700036<br>
+        <b style="font-size:16px;">Update location</b></span>
       </a>
 
-      <div class="dropdown language-dropdown me-4">
-  <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-    <img src="assets/images/india.png" alt="Language" style="width: 28px; height: 28px; font-size:25px;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" class="me-2">
-    Choose Language
-  </button>
-  
-  <ul class="dropdown-menu p-2" aria-labelledby="languageDropdown">
-    <li>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="language" id="english" checked>
-        <label class="form-check-label" for="english">English - EN</label>
-      </div>
-    </li>
-    <li>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="language" id="hindi">
-        <label class="form-check-label" for="hindi">हिन्दी - HI</label>
-      </div>
-    </li>
-    <li>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="language" id="bengali">
-        <label class="form-check-label" for="bengali">বাংলা - BN</label>
-      </div>
-    </li>
-    <li>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="language" id="tamil">
-        <label class="form-check-label" for="tamil">தமிழ் - TA</label>
-      </div>
-    </li>
-    <li>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="language" id="telugu">
-        <label class="form-check-label" for="telugu">தெலுங்கு - TE</label>
-      </div>
-    </li>
-    <li>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="language" id="telugu">
-        <label class="form-check-label" for="telugu">മലയാളം - MAL</label>
-      </div>
-    </li>
-    <li>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="language" id="telugu">
-        <label class="form-check-label" for="telugu">ಕನ್ನಡ-KN</label>
-      </div>
-    </li>
-    <li><hr class="dropdown-divider"></li>
-    <li><span class="dropdown-item-text">You are Shopping on EcoKart.com</span></li>
-    <li><a class="dropdown-item text-primary" href="#">Change country/region</a></li>
-  </ul>
-</div>
-
-    <div class="d-flex align-items-center me-5">  
-      <div class="input-group" style="width: 1000px; height:55px">
-        <span class="input-group-text"><i class="fas fa-search"></i></span>
-        <input type="text" id="search-input" class="form-control" placeholder="Search Products ,Brands and More in EcoKart.com...">
-        <button class="btn btn-outline-secondary" id="search-button" type="button">Search</button>
-      </div>
-    </div>
-
-    <div class="d-flex align-items-center ms-auto" style="font-size:15px">
-
-      <a href="index.html" class="text-decoration-none me-4 position-relative" style="color:aliceblue;">
-        <i class="fa fa-home" style="font-size: 30px;color:aliceblue"></i> <b>Home</b>
-      </a>
-      <a href="#" class="text-decoration-none  me-4" style="color:aliceblue;">
-        <i class="fa fa-sign-in" style="font-size: 30px; color:aliceblue"></i><b>Login</b>
-      </a>
-      
-      <a href="#" class="text-decoration-none me-4 position-relative" 
-   style="color:rgb(241, 241, 244);" onclick="renderWishlist()">
-   <i class="fa fa-heart" style="font-size: 30px;color:aliceblue"></i>
-   <b>My Wishlist</b>
-   <span id="wishlist-count" 
-         class="position-absolute top-0 start-5 translate-middle badge rounded-pill bg-danger">0</span>
-   <div id="wishlist-dropdown" 
-      style="
-        display: none;
-        position: absolute;
-        top: 40px; /* Adjust this value to position it below a typical header/icon */
-        right: 0; /* Align to the right edge of its container (e.g., the wishlist button) */
-        width: 300px; /* Give it a decent width */
-        max-height: 400px; /* Limit height and allow scrolling for many items */
-        overflow-y: auto; /* Enable vertical scroll when max-height is reached */
-        background-color: #393838; /* Clean white background */
-        padding: 15px; /* More padding for internal space */
-        border: 1px solid #e0e0e0; /* Subtle border */
-        border-radius: 8px; /* Rounded corners for a modern look */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft, noticeable shadow */
-        z-index: 1000; /* High z-index to ensure it sits on top of other content */
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clear, modern font */
-        
-        /* Target all text elements inside the dropdown */
-       #wishlist-dropdown * {
-         color: #090303 !important;
-       }   
-
-        /* Specifically target the text span if you used the recommended JS update */
-       .wishlist-item-text {
-         color: #070303 !important; /* Forces the text to be dark grey */
-         text-shadow: none !important; /* Ensure no white text-shadow is being applied */
-      }"></div>
-</a>
-
-
-      <a href="#" class="text-decoration-none me-4 position-relative" style="font-size:18px;color:rgb(246, 245, 244)">
-        <i class="fas fa-shipping-fast" style="font-size: 30px;color:aliceblue"></i><br><b>Orders & Returns</b>
-      </a>
- 
-      <button class="btn btn-outline-success position-relative me-4" id="cart-button">
-        <img src="assets/images/cart.jpg" alt="Cart" style="width:40px; height:40px; vertical-align:middle;">
-        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-      </button>
-      <div class="dropdown">
-        <button class="btn btn-light dropdown-toggle rounded-pill d-flex align-items-center px-3" style="font-size:20px" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa fa-ellipsis-v me-2"></i>More
+      <!-- Language Dropdown -->
+      <div class="dropdown language-dropdown me-3 mt-2 mt-lg-0">
+        <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button" id="languageDropdown"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="assets/images/india.png" alt="Language" style="width: 24px; height: 24px;" class="me-2">
+          Choose Language
         </button>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-          <li>
-            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="#">
-              <i class="fa-solid fa-bell" style="font-size: 30px;"></i>&nbsp Notification Preferences
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="#">
-              <i class="fa fa-headphones" style="font-size: 25px;"></i>&nbsp 24 * 7 Customer Care
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="about-contact.html#about">
-              <i class="fa fa-circle-info me-2" style="font-size: 30px;"></i> About Us
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="about-contact.html#contact">
-              <i class="fa fa-address-book me-2" style="font-size: 30px;"></i> Contact Us
-            </a>
-            <a class="dropdown-item d-flex align-items-center" style="font-size:20px" href="#product-images4">
-              <i class="fa fa-comments" aria-hidden="true" style="font-size: 30px;"></i> Reviews
-            </a>
-          </li>
+        <ul class="dropdown-menu p-2" aria-labelledby="languageDropdown" style="max-height:300px; overflow-y:auto;">
+          <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="english" checked><label class="form-check-label" for="english">English - EN</label></div></li>
+          <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="hindi"><label class="form-check-label" for="hindi">हिन्दी - HI</label></div></li>
+          <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="bengali"><label class="form-check-label" for="bengali">বাংলা - BN</label></div></li>
+          <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="tamil"><label class="form-check-label" for="tamil">தமிழ் - TA</label></div></li>
+          <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="telugu"><label class="form-check-label" for="telugu">తెలుగు - TE</label></div></li>
+          <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="malayalam"><label class="form-check-label" for="malayalam">മലയാളം - MAL</label></div></li>
+          <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="kannada"><label class="form-check-label" for="kannada">ಕನ್ನಡ - KN</label></div></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><span class="dropdown-item-text">You are Shopping on EcoKart.com</span></li>
+          <li><a class="dropdown-item text-primary" href="#">Change country/region</a></li>
         </ul>
       </div>
-    </div>
 
+      <!-- Search Bar -->
+      <div class="d-flex flex-grow-1 justify-content-center mt-3 mt-lg-0">
+        <div class="input-group" style="max-width: 700px; width: 100%; height:50px;">
+          <span class="input-group-text"><i class="fas fa-search"></i></span>
+          <input type="text" id="search-input" class="form-control" placeholder="Search Products, Brands and More...">
+          <button class="btn btn-outline-secondary" id="search-button" type="button">Search</button>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="d-flex align-items-center ms-auto mt-3 mt-lg-0 flex-wrap justify-content-center gap-3">
+
+        <a href="index.html" class="text-decoration-none text-light text-center">
+          <i class="fa fa-home" style="font-size: 25px;"></i><br><b>Home</b>
+        </a>
+
+        <a href="#" class="text-decoration-none text-light text-center">
+          <i class="fa fa-sign-in" style="font-size: 25px;"></i><br><b>Login</b>
+        </a>
+
+        <!-- Wishlist -->
+        <a href="#" class="text-decoration-none text-light text-center position-relative" onclick="renderWishlist()">
+          <i class="fa fa-heart" style="font-size: 25px;"></i><br><b>Wishlist</b>
+          <span id="wishlist-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          <div id="wishlist-dropdown"
+            style="display:none; position:absolute; top:50px; right:0; width:300px; max-height:400px; overflow-y:auto; background-color:#393838; padding:15px; border:1px solid #e0e0e0; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15); z-index:1000;">
+          </div>
+        </a>
+
+        <a href="#" class="text-decoration-none text-light text-center">
+          <i class="fas fa-shipping-fast" style="font-size: 25px;"></i><br><b>Orders</b>
+        </a>
+
+        <!-- Cart -->
+        <button class="btn btn-outline-success position-relative">
+          <img src="assets/images/cart.jpg" alt="Cart" style="width:35px; height:35px;">
+          <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+        </button>
+
+        <!-- More Dropdown -->
+        <div class="dropdown">
+          <button class="btn btn-light dropdown-toggle rounded-pill d-flex align-items-center px-2" style="font-size:16px" 
+            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-ellipsis-v me-2"></i>More
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item d-flex align-items-center" href="#"><i class="fa-solid fa-bell me-2"></i> Notification Preferences</a></li>
+            <li><a class="dropdown-item d-flex align-items-center" href="#"><i class="fa fa-headphones me-2"></i> 24x7 Customer Care</a></li>
+            <li><a class="dropdown-item d-flex align-items-center" href="about-contact.html#about"><i class="fa fa-circle-info me-2"></i> About Us</a></li>
+            <li><a class="dropdown-item d-flex align-items-center" href="about-contact.html#contact"><i class="fa fa-address-book me-2"></i> Contact Us</a></li>
+            <li><a class="dropdown-item d-flex align-items-center" href="#product-images4"><i class="fa fa-comments me-2"></i> Reviews</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
   </div>
 </nav>
 
 <style>
-        body {
-            /* Optional: To prevent scrollbars when offcanvas is open */
-            overflow-x: hidden;
-        }
 
-        /* --- Main Secondary Navbar --- */
-        .navbar-secondary {
-            background-color: #232f3e;
-            padding: 2px 6px; /* Reduced padding */
-            border-bottom: 1px solid #f5f1f1;
-        }
+  /* Main Secondary Navbar */
+  .navbar-secondary {
+    background-color: #0d0e39;
+    padding: 4px 8px;
+    border-bottom: 1px solid #f5f1f1;
+    overflow-x: auto; /* Allow horizontal scroll on small screens */
+    white-space: nowrap; /* Prevent wrapping of items */
+  }
 
-        /* Common style for all clickable items in the navbar */
-        .nav-item-secondary {
-            padding: 4px 12px;
-            margin: 0 2px;
-            border: 1px solid transparent;
-            border-radius: 4px;
-            transition: border-color 0.2s ease-in-out;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-        }
+  /* Scrollbar hidden for modern browsers */
+  .navbar-secondary::-webkit-scrollbar {
+    display: none;
+  }
 
-        .nav-item-secondary:hover,
-        .nav-item-secondary:focus {
-            color: #ffffff;
-            border-color: #ffffff;
-            outline: none; /* Remove default browser focus outline */
-        }
-        
-        /* Special styling for the 'All' button */
-        .btn-all-menu {
-            background-color: transparent;
-        }
+  .nav-item-secondary {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 0 4px;
+    font-size: 18px;
+    color: #eee;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+    white-space: nowrap;
+  }
 
-        /* --- Offcanvas Side Menu --- */
-        .offcanvas-header {
-            background-color: #232f3e;
-            color: #ffffff;
-        }
+  .nav-item-secondary:hover {
+    border-color: #fff;
+    color: #fff;
+  }
 
-        .offcanvas-body {
-            padding: 0;
-        }
+  .btn-all-menu {
+    background-color: transparent;
+  }
 
-        .offcanvas-link, .offcanvas-collapse-trigger {
-            display: block;
-            padding: 15px 25px;
-            color: #111;
-            text-decoration: none;
-            border-bottom: 1px solid #eee;
-            transition: background-color 0.2s ease;
-        }
-        
-        .offcanvas-link:hover, .offcanvas-collapse-trigger:hover {
-            background-color: #f0f0f0;
-            color: #000;
-        }
+  /* Dropdown adjustments */
+  .nav-item-dropdown {
+    display: inline-block;
+    position: relative;
+  }
 
-        .offcanvas-collapse-trigger {
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        /* Sub-menu inside the collapsible area */
-        .offcanvas-submenu a {
-            padding-left: 45px; /* Indent sub-items */
-            background-color: #fafafa;
-        }
+  .dropdown-menu-custom {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 999;
+    min-width: 200px;
+  }
 
-        /* --- Prime Popover Styling --- */
-        .popover-prime-ad {
-            max-width: 355px !important; /* Force a max-width */
-            padding: 0;
-            border: 1px solid #ddd;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-        .popover-prime-ad .popover-body {
-            padding: 0;
-        }
-        .prime-ad-image {
-            display: block;
-        }
-    </style>
+  .form-select, .form-check-input, .form-check-label {
+    font-size: 16px;
+  }
+
+  /* Popover Prime styling */
+  .popover-prime-ad {
+    max-width: 355px !important;
+    padding: 0;
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .navbar-secondary {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-item-secondary {
+      font-size: 16px;
+      padding: 6px 8px;
+    }
+
+    .nav-item-dropdown select {
+      font-size: 14px;
+    }
+
+    .fa {
+      font-size: 20px !important;
+    }
+  }
+</style>
+
 <!--Navbar:2-->
-<nav class="navbar-secondary" style="background-color: #0d0e39;">
-  <div class="d-flex align-items-center">
-            
-            <button class="btn nav-item-secondary btn-all-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu" style="font-size:25px;color:white;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-                <i class="fas fa-bars me-1" style="color:#eee; font-size:30px"></i> All
-            </button>
-            
-            <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px"><i class="fa fa-suitcase" aria-hidden="true"></i> Sell</a>
-            <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px"><i class="fa-solid fa-user-check"></i> Best Sellers</a>
-            <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px">Today's Deals</a>
-            <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px">New Releases</a>
-            
-            <a href="#" 
-            style="color:#eee; font-size:22px"
-               class="nav-item-secondary"
-               tabindex="0"
-               data-bs-toggle="popover"
-               data-bs-trigger="hover focus" 
-               data-bs-html="true"
-               data-bs-placement="bottom"
-               data-bs-custom-class="popover-prime-ad"
-               data-bs-content='<img src="assets/images/Prime-Black.png" width=650px height=280px alt="EcoKart Prime Membership Ad" class="prime-ad-image">'>Prime <i class="fa fa-caret-down fa-xs ms-1" style="color:#403f3f; font-size:16px"></i>
-            </a>
-            
-             <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px">Offer Zone <i class='fa fa-star' style='font-size:24px'></i>
-             </a>
-              <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px">Coupons
-                <span class="fa-stack fa-lg">
-              <i class="fa fa-certificate fa-stack-2x" style="color:#333332"></i>
-              <i class="fa fa-tag fa-stack-1x fa-inverse"></i>
-             </span> 
-              </a>
-              <!-- All Categories -->
-  <div class="nav-item-dropdown me-3" style="position: relative;">
-    <a href="#" id="all-categories-toggle" class="nav-item-secondary" style="color:#eee; font-size:22px">
-      <i class="fa fa-list"></i> All Categories
-    </a>
-    <!-- Dropdown container (hidden by default) -->
-    <div id="all-categories-dropdown" class="dropdown-menu-custom" style="display:none;">
+<nav class="navbar-secondary">
+  <button class="btn nav-item-secondary btn-all-menu" type="button" data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+    <i class="fas fa-bars me-1" style="color:#eee; font-size:22px"></i> All
+  </button>
+
+  <a href="#" class="nav-item-secondary"><i class="fa fa-suitcase"></i> Sell</a>
+  <a href="#" class="nav-item-secondary"><i class="fa-solid fa-user-check"></i> Best Sellers</a>
+  <a href="#" class="nav-item-secondary">Today's Deals</a>
+  <a href="#" class="nav-item-secondary">New Releases</a>
+
+  <a href="#" class="nav-item-secondary" data-bs-toggle="popover" data-bs-trigger="hover focus"
+    data-bs-html="true" data-bs-placement="bottom" data-bs-custom-class="popover-prime-ad"
+    data-bs-content='<img src="assets/images/Prime-Black.png" width=650px height=280px alt="EcoKart Prime Membership Ad">'>
+    Prime <i class="fa fa-caret-down fa-xs ms-1"></i>
+  </a>
+
+  <a href="#" class="nav-item-secondary">Offer Zone <i class='fa fa-star'></i></a>
+  <a href="#" class="nav-item-secondary">Coupons
+    <span class="fa-stack fa-sm">
+      <i class="fa fa-certificate fa-stack-2x" style="color:#333332"></i>
+      <i class="fa fa-tag fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+
+  <!-- Category Dropdown -->
+  <div class="nav-item-dropdown">
+    <a href="#" id="all-categories-toggle" class="nav-item-secondary"><i class="fa fa-list"></i> All Categories</a>
+    <div id="all-categories-dropdown" class="dropdown-menu-custom">
       <select id="category-filter" class="form-select">
         <option value="all">All Categories</option>
         <option value="Home Decor">Home Decor</option>
@@ -320,28 +258,19 @@
     </div>
   </div>
 
-  <!-- Filter -->
-  <div class="nav-item-dropdown" style="position: relative;">
-    <a href="#" id="filter-toggle" class="nav-item-secondary" style="color:#eee; font-size:22px">
-      <i class="fa fa-filter"></i> Filter
-    </a>
-    <!-- Dropdown container (hidden by default) -->
-    <div id="filter-dropdown" class="dropdown-menu-custom" style="display:none; max-height:300px; overflow-y:auto;">
-      <div id="category-checkboxes">
-        <!-- Injected checkboxes by JS -->
-      </div>
+  <!-- Filter Dropdown -->
+  <div class="nav-item-dropdown">
+    <a href="#" id="filter-toggle" class="nav-item-secondary"><i class="fa fa-filter"></i> Filter</a>
+    <div id="filter-dropdown" class="dropdown-menu-custom" style="max-height:300px; overflow-y:auto;">
+      <div id="category-checkboxes"><!-- JS Injects Filters Here --></div>
     </div>
   </div>
-              
-              <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px"><i class="fa-solid fa-user"></i> My Account </a>
-              <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px"> <i class='fas fa-headset' style='font-size:36px'></i> Customer Service</a>
-              <a href="#" class="nav-item-secondary" style="color:#eee; font-size:22px">My Notifications <i class="fa fa-bell" aria-hidden="true" style="color:rgb(244, 241, 241)"></i></a>
 
-        <!-- <a href="index.html" class="navbar-logo">
-          <img src="assets/images/navbar-logo.png" alt="Your Brand Logo">
-        </a> -->
-        </div>
+  <a href="#" class="nav-item-secondary"><i class="fa-solid fa-user"></i> My Account</a>
+  <a href="#" class="nav-item-secondary"><i class='fas fa-headset'></i> Customer Service</a>
+  <a href="#" class="nav-item-secondary"><i class="fa fa-bell"></i> My Notifications</a>
 </nav>
+
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
   <div class="offcanvas-header">
@@ -742,10 +671,9 @@
         </div>
     </div>
 
-
 <!--Banner Section-2 Grid type-->
 
-<div class="banner-container" style="background-color:white;margin-left:-450px">
+      <div class="banner-container" style="background-color:white">
         <div class="banner">
           <h3><b>Flat 10% CashBack Offers! | Home & Kitchen Products</b></h3>
             <div class="image-container">
@@ -776,6 +704,7 @@
             </div>
             <div class="see-all"><a href="#">See all</a></div>
         </div>
+        
         <div class="banner">
           <h3><b>For Your Wishlist! 🎁</b></h3>
             <div class="image-container">
@@ -788,11 +717,10 @@
         </div>
         <div class="banner-2">
             <div class="image-container-2">
-                <img src="assets/images/show-4.jpg" alt="Image 9" style="margin-top:80px;margin-right:-532px;" width="700%" height="2000%">
+                <img src="assets/images/show-4.jpg" alt="Image 9"  style="margin-top:50px" width="340px" height="250px" margin-right="1150px">
             </div>
         </div>
     </div>
-
 
 
     <!--Carousel-Product Slider Adv-1-->
@@ -1008,16 +936,22 @@
     </div>
 </div>
 
-
-
 <!--Carousel-Product Slider Adv-2(** Limited Offer**)-->
 <div class="product-carousel-section1" style="background-color: #e0dfdf;padding: 20px 0;">
     <div class="offer-banner-urgent">
         <div class="row align-items-center">
             <div class="col-lg-8">
-                <h2 class="mb-0" style="font-size:30px; margin-left: 180px;"><b><i>🌟 Limited Time Offer! ⏰ Jewellery 💍, Gifting & Stationery 🛍 Deals | ₹2999+ with No Cost EMI 💸</i></b></h2>
+                <!-- <h2 class="mb-0" style="font-size:30px; margin-left: 180px;"><b><i>🌟 Limited Time Offer! ⏰ Jewellery 💍, Gifting & Stationery 🛍 Deals | ₹2999+ with No Cost EMI 💸</i></b></h2> -->
+                <h2 class="text-center mb-0" style="font-size:30px"><b><i><br>🌟 Limited Time Offer! ⏰ Jewellery 💍, Gifting & Stationery 🛍 Deals | ₹2999+ with No Cost EMI 💸</i></b></h2><br>
             </div>
-            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0 d-lg-flex justify-content-lg-end align-items-center gap-2">
+            <!-- <div class="col-lg-4 text-lg-end mt-3 mt-lg-0 d-lg-flex justify-content-lg-end align-items-center gap-2">
+              <p class="deal-text mb-0">HOT DEAL ENDS IN...</p>
+              <div id="timer-urgent"></div>
+              <h2 class="deal-text mb-0"><b><i>HOT DEAL ENDS IN...</i></b></h2>
+              <div id="timer-urgent"></div>-->
+            <!-- </div> -->
+             <!--col-lg-4 -->
+            <div class="text-lg-end mt-3 mt-lg-0 d-lg-flex justify-content-lg-end align-items-center gap-2 deal-container">
               <p class="deal-text mb-0">HOT DEAL ENDS IN...</p>
               <div id="timer-urgent"></div>
             </div>

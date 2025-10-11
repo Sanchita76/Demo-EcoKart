@@ -187,9 +187,9 @@ wishlistDropdown.insertAdjacentHTML('beforeend', productHTML);
 
 
 function removeFromWishlist(productId) {
-    let wishlist = getWishlist().filter(i => i.id !== productId);
-    saveWishlist(wishlist);
+    wishlist = getWishlist().filter(i => i.id !== productId);
     updateWishlistCount();
+    saveWishlist(wishlist);
     // Notification message
     const notification = document.createElement("div");
     notification.classList.add("notification");
