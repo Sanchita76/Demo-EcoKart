@@ -21,7 +21,7 @@
     <!-- Brand Logo -->
     <a class="navbar-brand me-3" href="index.html">
       <img src="assets/images/ecokart.jpeg" alt="EcoKart Logo" style="width: 110px; height: 90px;">
-    </a>
+    </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
     <!-- Toggler for mobile -->
     <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
@@ -33,32 +33,32 @@
     <div class="collapse navbar-collapse" id="navbarContent">
 
       <!-- Location -->
-      <a href="#" class="text-decoration-none me-3 mt-2 mt-lg-0" style="color:aliceblue;">
-        <i class="fa-solid fa-location-dot" style="font-size: 30px;"></i>
-        <span style="font-size: 14px; display:block;">Delivery to Kolkata 700036<br>
-        <b style="font-size:16px;">Update location</b></span>
+      <a href="#" class="text-decoration-none me-3 mt-2 mt-lg-0" style="color:aliceblue;font-size:20px;">
+        <i class="fa-solid fa-location-dot" style="font-size: 40px;"></i>Delivery to Kolkata 700036&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+        <!-- <span style="font-size: 14px; display:block;">Delivery to Kolkata 700036<br> -->
+        <b style="color:aliceblue; font-size:25px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Update location&nbsp;&nbsp;&nbsp;&nbsp;</b>&nbsp;&nbsp;</span>
       </a>
 
       <!-- Language Dropdown -->
-      <div class="dropdown language-dropdown me-3 mt-2 mt-lg-0">
+      <div class="dropdown language-dropdown me-3 mt-2 mt-lg-0" style="color:aliceblue;font-size:20px;">
         <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button" id="languageDropdown"
-          data-bs-toggle="dropdown" aria-expanded="false">
+          data-bs-toggle="dropdown" aria-expanded="false" style="color:rgb(26, 27, 27);font-size:20px;font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"">
           <img src="assets/images/india.png" alt="Language" style="width: 24px; height: 24px;" class="me-2">
           Choose Language
         </button>
-        <ul class="dropdown-menu p-2" aria-labelledby="languageDropdown" style="max-height:300px; overflow-y:auto;">
+        <ul class="dropdown-menu p-2" aria-labelledby="languageDropdown" style="max-height:300px; overflow-y:auto; font-size:20px;">
           <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="english" checked><label class="form-check-label" for="english">English - EN</label></div></li>
           <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="hindi"><label class="form-check-label" for="hindi">हिन्दी - HI</label></div></li>
           <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="bengali"><label class="form-check-label" for="bengali">বাংলা - BN</label></div></li>
           <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="tamil"><label class="form-check-label" for="tamil">தமிழ் - TA</label></div></li>
-          <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="telugu"><label class="form-check-label" for="telugu">తెలుగు - TE</label></div></li>
+          <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="telugu"><label class="form-check-label" for="telugu">தெலுங்கு - TE</label></div></li>
           <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="malayalam"><label class="form-check-label" for="malayalam">മലയാളം - MAL</label></div></li>
           <li><div class="form-check"><input class="form-check-input" type="radio" name="language" id="kannada"><label class="form-check-label" for="kannada">ಕನ್ನಡ - KN</label></div></li>
           <li><hr class="dropdown-divider"></li>
           <li><span class="dropdown-item-text">You are Shopping on EcoKart.com</span></li>
           <li><a class="dropdown-item text-primary" href="#">Change country/region</a></li>
         </ul>
-      </div>
+      </div>&nbsp;&nbsp;&nbsp;&nbsp;
 
       <!-- Search Bar -->
       <div class="d-flex flex-grow-1 justify-content-center mt-3 mt-lg-0">
@@ -73,30 +73,31 @@
       <div class="d-flex align-items-center ms-auto mt-3 mt-lg-0 flex-wrap justify-content-center gap-3">
 
         <a href="index.html" class="text-decoration-none text-light text-center">
-          <i class="fa fa-home" style="font-size: 25px;"></i><br><b>Home</b>
+          <i class="fa fa-home" style="font-size: 30px;"></i><br><b>Home</b>&nbsp;&nbsp;
         </a>
 
         <a href="#" class="text-decoration-none text-light text-center">
-          <i class="fa fa-sign-in" style="font-size: 25px;"></i><br><b>Login</b>
+          <i class="fa fa-sign-in" style="font-size: 30px;"></i><br><b>Login</b>&nbsp;&nbsp;
         </a>
 
         <!-- Wishlist -->
+         <div class="position-relative text-center">
         <a href="#" class="text-decoration-none text-light text-center position-relative" onclick="renderWishlist()">
-          <i class="fa fa-heart" style="font-size: 25px;"></i><br><b>Wishlist</b>
-          <span id="wishlist-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          <i class="fa fa-heart" style="font-size: 25px;"></i><br><b>My Wishlist</b>&nbsp;&nbsp;
+          <span id="wishlist-count" class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger">0</span>
           <div id="wishlist-dropdown"
-            style="display:none; position:absolute; top:50px; right:0; width:300px; max-height:400px; overflow-y:auto; background-color:#393838; padding:15px; border:1px solid #e0e0e0; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15); z-index:1000;">
+            style="display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); top:50px; right:0; min-width:300px;max-width:300px; max-height:400px; overflow-y:auto; background-color:#393838; padding:15px; border:1px solid #e0e0e0; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15); z-index:1000;">
           </div>
-        </a>
+        </a></div>
 
-        <a href="#" class="text-decoration-none text-light text-center">
-          <i class="fas fa-shipping-fast" style="font-size: 25px;"></i><br><b>Orders</b>
+        <a href="#" class="text-decoration-none text-light text-center" style="font-size:18px;color:rgb(246, 245, 244)">
+          <i class="fas fa-shipping-fast" style="font-size: 30px;color:aliceblue"></i><br><b>Orders<br>& Returns</b>&nbsp;&nbsp;
         </a>
 
         <!-- Cart -->
-        <button class="btn btn-outline-success position-relative">
+        <button class="btn btn-outline-success position-relative" id="cart-button">
           <img src="assets/images/cart.jpg" alt="Cart" style="width:35px; height:35px;">
-          <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>&nbsp;&nbsp;
         </button>
 
         <!-- More Dropdown -->
@@ -120,50 +121,93 @@
 </nav>
 
 <style>
+  body{
+      /* Optional: To prevent scrollbars when offcanvas is open New*/
+      overflow-x: hidden;
+  }
+
+  .navbar-scroll-wrapper {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: visible;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
 
   /* Main Secondary Navbar */
   .navbar-secondary {
-    background-color: #0d0e39;
-    padding: 4px 8px;
-    border-bottom: 1px solid #f5f1f1;
-    overflow-x: auto; /* Allow horizontal scroll on small screens */
-    white-space: nowrap; /* Prevent wrapping of items */
+  background-color: #0d0e39;
+  padding: 8px 10px;
+  border-bottom: 1px solid #f5f1f1;
+  z-index: 100;
   }
+
+  /* @media (max-width: 768px) {
+  .navbar-secondary {
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+} */
 
   /* Scrollbar hidden for modern browsers */
   .navbar-secondary::-webkit-scrollbar {
     display: none;
   }
 
-  .nav-item-secondary {
-    display: inline-block;
-    padding: 6px 12px;
-    margin: 0 4px;
-    font-size: 18px;
-    color: #eee;
-    text-decoration: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    transition: border-color 0.2s ease;
-    white-space: nowrap;
-  }
+   /* Common style for all clickable items in the navbar */
+  /* Prevent navbar wrapping */
+.nav-item-secondary {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0 4px;
+  font-size: 22px;
+  color: #eee;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  background: none;
+  text-decoration:none;
+  transition: border-color 0.2s ease-in-out;
+}
 
-  .nav-item-secondary:hover {
+  /* .nav-item-secondary:hover {
     border-color: #fff;
     color: #fff;
+  } */
+   .nav-item-secondary:hover,/* New */
+    .nav-item-secondary:focus {
+    color: #ffffff;
+    border-color: #ffffff;
+    outline: none; /* Remove default browser focus outline */
   }
 
   .btn-all-menu {
     background-color: transparent;
   }
+/* Ensure dropdowns appear above overflow area */
+.dropdown-menu-custom {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  min-width: 200px;
+  z-index: 9999 !important; /* Force topmost layer */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
-  /* Dropdown adjustments */
+
+  /* Dropdown adjustments
   .nav-item-dropdown {
     display: inline-block;
     position: relative;
-  }
+  } */
 
-  .dropdown-menu-custom {
+  /* .dropdown-menu-custom {
     display: none;
     position: absolute;
     top: 40px;
@@ -174,22 +218,22 @@
     padding: 10px;
     z-index: 999;
     min-width: 200px;
-  }
-
+  } */
+/*
   .form-select, .form-check-input, .form-check-label {
     font-size: 16px;
-  }
+  } */
 
   /* Popover Prime styling */
-  .popover-prime-ad {
+  /* .popover-prime-ad {
     max-width: 355px !important;
     padding: 0;
     border: 1px solid #ddd;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  }
+  } */
 
   /* Responsive adjustments */
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     .navbar-secondary {
       display: flex;
       flex-wrap: nowrap;
@@ -209,67 +253,130 @@
     .fa {
       font-size: 20px !important;
     }
-  }
+  } */
+   /* --- Offcanvas Side Menu --- */
+        .offcanvas-header {
+            background-color: #232f3e;
+            color: #ffffff;
+        }
+
+        .offcanvas-body {
+            padding: 0;
+        }
+
+        .offcanvas-link, .offcanvas-collapse-trigger {
+            display: block;
+            padding: 15px 25px;
+            color: #111;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s ease;
+        }
+        
+        .offcanvas-link:hover, .offcanvas-collapse-trigger:hover {
+            background-color: #f0f0f0;
+            color: #000;
+        }
+
+        .offcanvas-collapse-trigger {
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Sub-menu inside the collapsible area */
+        .offcanvas-submenu a {
+            padding-left: 45px; /* Indent sub-items */
+            background-color: #fafafa;
+        }
+
+        /* --- Prime Popover Styling --- */
+        .popover-prime-ad {
+            max-width: 355px !important; /* Force a max-width */
+            padding: 0;
+            border: 1px solid #ddd;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .popover-prime-ad .popover-body {
+            padding: 0;
+        }
+        .prime-ad-image {
+            display: block;
+        }
 </style>
 
 <!--Navbar:2-->
 <nav class="navbar-secondary">
-  <button class="btn nav-item-secondary btn-all-menu" type="button" data-bs-toggle="offcanvas"
-    data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
-    <i class="fas fa-bars me-1" style="color:#eee; font-size:22px"></i> All
-  </button>
+  <div class="navbar-scroll-wrapper">
+    <!-- All Menu -->
+    <button class="btn nav-item-secondary btn-all-menu" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+      <i class="fas fa-bars me-1" style="color:#eee; font-size:30px"></i> All
+    </button>
 
-  <a href="#" class="nav-item-secondary"><i class="fa fa-suitcase"></i> Sell</a>
-  <a href="#" class="nav-item-secondary"><i class="fa-solid fa-user-check"></i> Best Sellers</a>
-  <a href="#" class="nav-item-secondary">Today's Deals</a>
-  <a href="#" class="nav-item-secondary">New Releases</a>
+    <!-- Core Links -->
+    <a href="#" class="nav-item-secondary"><i class="fa fa-suitcase"></i> Sell</a>
+    <a href="#" class="nav-item-secondary"><i class="fa-solid fa-user-check"></i> Best Sellers</a>
+    <a href="#" class="nav-item-secondary">Today's Deals</a>
+    <a href="#" class="nav-item-secondary">New Releases</a>
 
-  <a href="#" class="nav-item-secondary" data-bs-toggle="popover" data-bs-trigger="hover focus"
-    data-bs-html="true" data-bs-placement="bottom" data-bs-custom-class="popover-prime-ad"
-    data-bs-content='<img src="assets/images/Prime-Black.png" width=650px height=280px alt="EcoKart Prime Membership Ad">'>
-    Prime <i class="fa fa-caret-down fa-xs ms-1"></i>
-  </a>
+    <!-- Prime Popover -->
+    <a href="#" class="nav-item-secondary" data-bs-toggle="popover" data-bs-trigger="hover focus"
+      data-bs-html="true" data-bs-placement="bottom" data-bs-custom-class="popover-prime-ad"
+      data-bs-content='<img src="assets/images/Prime-Black.png" width=650 height=280 alt="EcoKart Prime Membership Ad">'>
+      Prime <i class="fa fa-caret-down fa-xs ms-1"></i>
+    </a>
 
-  <a href="#" class="nav-item-secondary">Offer Zone <i class='fa fa-star'></i></a>
-  <a href="#" class="nav-item-secondary">Coupons
-    <span class="fa-stack fa-sm">
-      <i class="fa fa-certificate fa-stack-2x" style="color:#333332"></i>
-      <i class="fa fa-tag fa-stack-1x fa-inverse"></i>
-    </span>
-  </a>
+    <a href="#" class="nav-item-secondary">Offer Zone <i class="fa fa-star"></i></a>
+    <a href="#" class="nav-item-secondary">Coupons
+      <span class="fa-stack fa-sm">
+        <i class="fa fa-certificate fa-stack-2x" style="color:#333332"></i>
+        <i class="fa fa-tag fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
 
-  <!-- Category Dropdown -->
-  <div class="nav-item-dropdown">
-    <a href="#" id="all-categories-toggle" class="nav-item-secondary"><i class="fa fa-list"></i> All Categories</a>
-    <div id="all-categories-dropdown" class="dropdown-menu-custom">
-      <select id="category-filter" class="form-select">
-        <option value="all">All Categories</option>
-        <option value="Home Decor">Home Decor</option>
-        <option value="Education">Education</option>
-        <option value="Personal Care">Personal Care</option>
-        <option value="Kitchen">Kitchen</option>
-        <option value="Daily Use">Daily Use</option>
-        <option value="Men's Fashion">Men's Fashion</option>
-        <option value="Women's Fashion">Women's Fashion</option>
-        <option value="Pets & Kids">Pets & Kids</option>
-        <option value="Outdoor & Sports">Outdoor & Sports</option>
-        <option value="Gifts & Stationary">Gifts & Stationary</option>
-      </select>
+    <!-- All Categories Dropdown -->
+    <div class="nav-item-dropdown" style="position: relative;">
+      <a href="#" id="all-categories-toggle" class="nav-item-secondary">
+        <i class="fa fa-list"></i> All Categories
+      </a>
+      <div id="all-categories-dropdown" class="dropdown-menu-custom" style="display:none;">
+        <select id="category-filter" class="form-select">
+          <option value="all">All Categories</option>
+          <option value="Home Decor">Home Decor</option>
+          <option value="Education">Education</option>
+          <option value="Personal Care">Personal Care</option>
+          <option value="Kitchen">Kitchen</option>
+          <option value="Daily Use">Daily Use</option>
+          <option value="Men's Fashion">Men's Fashion</option>
+          <option value="Women's Fashion">Women's Fashion</option>
+          <option value="Pets & Kids">Pets & Kids</option>
+          <option value="Outdoor & Sports">Outdoor & Sports</option>
+          <option value="Gifts & Stationary">Gifts & Stationary</option>
+        </select>
+      </div>
     </div>
-  </div>
 
-  <!-- Filter Dropdown -->
-  <div class="nav-item-dropdown">
-    <a href="#" id="filter-toggle" class="nav-item-secondary"><i class="fa fa-filter"></i> Filter</a>
-    <div id="filter-dropdown" class="dropdown-menu-custom" style="max-height:300px; overflow-y:auto;">
-      <div id="category-checkboxes"><!-- JS Injects Filters Here --></div>
+    <!-- Filter Dropdown -->
+    <div class="nav-item-dropdown" style="position: relative;">
+      <a href="#" id="filter-toggle" class="nav-item-secondary">
+        <i class="fa fa-filter"></i> Filter
+      </a>
+      <div id="filter-dropdown" class="dropdown-menu-custom" style="display:none; max-height:300px; overflow-y:auto;">
+        <div id="category-checkboxes">
+          <!-- Injected checkboxes by JS -->
+        </div>
+      </div>
     </div>
-  </div>
 
-  <a href="#" class="nav-item-secondary"><i class="fa-solid fa-user"></i> My Account</a>
-  <a href="#" class="nav-item-secondary"><i class='fas fa-headset'></i> Customer Service</a>
-  <a href="#" class="nav-item-secondary"><i class="fa fa-bell"></i> My Notifications</a>
+    <!-- Remaining Links -->
+    <a href="#" class="nav-item-secondary"><i class="fa-solid fa-user"></i> My Account</a>
+    <a href="#" class="nav-item-secondary"><i class='fas fa-headset'></i> Customer Service</a>
+    <a href="#" class="nav-item-secondary"><i class="fa fa-bell"></i> My Notifications</a>
+  </div>
 </nav>
+
 
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
@@ -717,7 +824,7 @@
         </div>
         <div class="banner-2">
             <div class="image-container-2">
-                <img src="assets/images/show-4.jpg" alt="Image 9"  style="margin-top:50px" width="340px" height="250px" margin-right="1150px">
+                <img src="assets/images/show-4.jpg" alt="Image 9"  style="margin-top:50px" width="480px" height="250px" margin-right="1150px">
             </div>
         </div>
     </div>
@@ -1419,6 +1526,70 @@
     
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const categoryToggle = document.getElementById("all-categories-toggle");
+  const filterToggle = document.getElementById("filter-toggle");
+  const categoryDropdown = document.getElementById("all-categories-dropdown");
+  const filterDropdown = document.getElementById("filter-dropdown");
+
+  let openDropdown = null;
+
+  function showDropdown(trigger, dropdown) {
+    // Close any previously open dropdown
+    if (openDropdown && openDropdown !== dropdown) {
+      openDropdown.style.display = "none";
+      document.body.removeChild(openDropdown);
+    }
+
+    const rect = trigger.getBoundingClientRect();
+
+    dropdown.style.display = "block";
+    dropdown.style.position = "absolute";
+    dropdown.style.top = rect.bottom + window.scrollY + "px";
+    dropdown.style.left = rect.left + window.scrollX + "px";
+    dropdown.style.zIndex = "9999";
+
+    // Append to body so it's outside any overflow container
+    document.body.appendChild(dropdown);
+    openDropdown = dropdown;
+  }
+
+  function hideDropdown(dropdown) {
+    dropdown.style.display = "none";
+    if (dropdown.parentElement === document.body) {
+      document.body.removeChild(dropdown);
+    }
+    openDropdown = null;
+  }
+
+  categoryToggle.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (categoryDropdown.style.display === "block") hideDropdown(categoryDropdown);
+    else showDropdown(categoryToggle, categoryDropdown);
+  });
+
+  filterToggle.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (filterDropdown.style.display === "block") hideDropdown(filterDropdown);
+    else showDropdown(filterToggle, filterDropdown);
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener("click", function (e) {
+    if (
+      openDropdown &&
+      !openDropdown.contains(e.target) &&
+      e.target !== categoryToggle &&
+      e.target !== filterToggle
+    ) {
+      hideDropdown(openDropdown);
+    }
+  });
+});
+</script>
+
+
+<script>
 document.addEventListener('DOMContentLoaded', function () {
     const menuContainer = document.querySelector('.offcanvas-menu-container');
     if (!menuContainer) return;
@@ -1465,26 +1636,26 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Toggle Filter Dropdown
-document.getElementById("filter-toggle").addEventListener("click", (e) => {
-  e.preventDefault();
-  const dropdown = document.getElementById("filter-dropdown");
-  dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
-});
+// document.getElementById("filter-toggle").addEventListener("click", (e) => {
+//   e.preventDefault();
+//   const dropdown = document.getElementById("filter-dropdown");
+//   dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+// });
 
 // Toggle All Categories Dropdown
-document.getElementById("all-categories-toggle").addEventListener("click", (e) => {
-  e.preventDefault();
-  const dropdown = document.getElementById("all-categories-dropdown");
-  dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
-});
+// document.getElementById("all-categories-toggle").addEventListener("click", (e) => {
+//   e.preventDefault();
+//   const dropdown = document.getElementById("all-categories-dropdown");
+//   dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+// });
 
 // Close dropdown if clicked outside
-document.addEventListener("click", function(event) {
-  if (!event.target.closest(".nav-item-dropdown")) {
-    document.getElementById("filter-dropdown").style.display = "none";
-    document.getElementById("all-categories-dropdown").style.display = "none";
-  }
-});
+// document.addEventListener("click", function(event) {
+//   if (!event.target.closest(".nav-item-dropdown")) {
+//     document.getElementById("filter-dropdown").style.display = "none";
+//     document.getElementById("all-categories-dropdown").style.display = "none";
+//   }
+// });
 
 
 // Sidebar "All Categories" dropdown filter

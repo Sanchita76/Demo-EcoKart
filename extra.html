@@ -1,0 +1,255 @@
+<style>
+  body{
+      /* Optional: To prevent scrollbars when offcanvas is open New*/
+      overflow-x: hidden;
+  }
+
+  /* Main Secondary Navbar */
+  .navbar-secondary {
+    background-color: #0d0e39;
+    padding: 4px 8px;
+    border-bottom: 1px solid #f5f1f1;
+    /*New*/
+    white-space: nowrap; /* Prevent wrapping of items */
+  }
+  .navbar-items-wrapper {
+    overflow-x: auto; /* Allow horizontal scroll on small screens */
+    overflow-y: visible;
+    white-space: nowrap;
+    contain: none;
+  }
+
+  /* @media (max-width: 768px) {
+  .navbar-secondary {
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+} */
+
+  /* Scrollbar hidden for modern browsers */
+  .navbar-secondary::-webkit-scrollbar {
+    display: none;
+  }
+
+   /* Common style for all clickable items in the navbar */
+  .nav-item-secondary {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 0 4px;
+    font-size: 22px;
+    color: #eee;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    /* transition: border-color 0.2s ease; */
+    transition: border-color 0.2s ease-in-out;
+    white-space: nowrap;
+    cursor: pointer;/*New*/
+  }
+
+  /* .nav-item-secondary:hover {
+    border-color: #fff;
+    color: #fff;
+  } */
+   .nav-item-secondary:hover,/* New */
+    .nav-item-secondary:focus {
+    color: #ffffff;
+    border-color: #ffffff;
+    outline: none; /* Remove default browser focus outline */
+  }
+
+  .btn-all-menu {
+    background-color: transparent;
+  }
+  
+   .dropdown-menu-custom {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  z-index: 1000;
+  min-width: 200px;
+  }
+
+
+  /* Dropdown adjustments
+  .nav-item-dropdown {
+    display: inline-block;
+    position: relative;
+  } */
+
+  /* .dropdown-menu-custom {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 999;
+    min-width: 200px;
+  } */
+/*
+  .form-select, .form-check-input, .form-check-label {
+    font-size: 16px;
+  } */
+
+  /* Popover Prime styling */
+  /* .popover-prime-ad {
+    max-width: 355px !important;
+    padding: 0;
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  } */
+
+  /* Responsive adjustments */
+  /* @media (max-width: 768px) {
+    .navbar-secondary {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-item-secondary {
+      font-size: 16px;
+      padding: 6px 8px;
+    }
+
+    .nav-item-dropdown select {
+      font-size: 14px;
+    }
+
+    .fa {
+      font-size: 20px !important;
+    }
+  } */
+   /* --- Offcanvas Side Menu --- */
+        .offcanvas-header {
+            background-color: #232f3e;
+            color: #ffffff;
+        }
+
+        .offcanvas-body {
+            padding: 0;
+        }
+
+        .offcanvas-link, .offcanvas-collapse-trigger {
+            display: block;
+            padding: 15px 25px;
+            color: #111;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s ease;
+        }
+        
+        .offcanvas-link:hover, .offcanvas-collapse-trigger:hover {
+            background-color: #f0f0f0;
+            color: #000;
+        }
+
+        .offcanvas-collapse-trigger {
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Sub-menu inside the collapsible area */
+        .offcanvas-submenu a {
+            padding-left: 45px; /* Indent sub-items */
+            background-color: #fafafa;
+        }
+
+        /* --- Prime Popover Styling --- */
+        .popover-prime-ad {
+            max-width: 355px !important; /* Force a max-width */
+            padding: 0;
+            border: 1px solid #ddd;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .popover-prime-ad .popover-body {
+            padding: 0;
+        }
+        .prime-ad-image {
+            display: block;
+        }
+</style>
+
+<!--Navbar:2-->
+<nav class="navbar-secondary" style="background-color: #0d0e39;">
+   <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center navbar-items-wrapper">
+  <button class="btn nav-item-secondary btn-all-menu" type="button" data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu" style="font-size:25px;color:white;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+    <i class="fas fa-bars me-1" style="color:#eee; font-size:30px"></i> All
+  </button>
+
+  <a href="#" class="nav-item-secondary"><i class="fa fa-suitcase"></i> Sell</a>
+  <a href="#" class="nav-item-secondary"><i class="fa-solid fa-user-check"></i> Best Sellers</a>
+  <a href="#" class="nav-item-secondary">Today's Deals</a>
+  <a href="#" class="nav-item-secondary">New Releases</a>
+
+  <a href="#" class="nav-item-secondary" data-bs-toggle="popover" data-bs-trigger="hover focus"
+    data-bs-html="true" data-bs-placement="bottom" data-bs-custom-class="popover-prime-ad"
+    data-bs-content='<img src="assets/images/Prime-Black.png" width=650px height=280px alt="EcoKart Prime Membership Ad">'>
+    Prime <i class="fa fa-caret-down fa-xs ms-1"></i>
+  </a>
+
+  <a href="#" class="nav-item-secondary">Offer Zone <i class='fa fa-star'></i></a>
+  <a href="#" class="nav-item-secondary">Coupons
+    <span class="fa-stack fa-sm">
+      <i class="fa fa-certificate fa-stack-2x" style="color:#333332"></i>
+      <i class="fa fa-tag fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+
+  </div>
+
+  <!-- All Categories -->
+  <div class="nav-item-dropdown me-3" style="position: relative;">
+    <a href="#" id="all-categories-toggle" class="nav-item-secondary" style="color:#eee; font-size:22px">
+      <i class="fa fa-list"></i> All Categories
+    </a>
+    <!-- Dropdown container (hidden by default) -->
+    <div id="all-categories-dropdown" class="dropdown-menu-custom" style="display:none;">
+      <select id="category-filter" class="form-select">
+        <option value="all">All Categories</option>
+        <option value="Home Decor">Home Decor</option>
+        <option value="Education">Education</option>
+        <option value="Personal Care">Personal Care</option>
+        <option value="Kitchen">Kitchen</option>
+        <option value="Daily Use">Daily Use</option>
+        <option value="Men's Fashion">Men's Fashion</option>
+        <option value="Women's Fashion">Women's Fashion</option>
+        <option value="Pets & Kids">Pets & Kids</option>
+        <option value="Outdoor & Sports">Outdoor & Sports</option>
+        <option value="Gifts & Stationary">Gifts & Stationary</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Filter -->
+  <div class="nav-item-dropdown" style="position: relative;">
+    <a href="#" id="filter-toggle" class="nav-item-secondary" style="color:#eee; font-size:22px">
+      <i class="fa fa-filter"></i> Filter
+    </a>
+    <!-- Dropdown container (hidden by default) -->
+    <div id="filter-dropdown" class="dropdown-menu-custom" style="display:none; max-height:300px; overflow-y:auto;">
+      <div id="category-checkboxes">
+        <!-- Injected checkboxes by JS -->
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center navbar-items-wrapper">
+  <a href="#" class="nav-item-secondary"><i class="fa-solid fa-user"></i> My Account</a>
+  <a href="#" class="nav-item-secondary"><i class='fas fa-headset'></i> Customer Service</a>
+  <a href="#" class="nav-item-secondary"><i class="fa fa-bell"></i> My Notifications</a>
+  </div>
+</div>
+</nav>
