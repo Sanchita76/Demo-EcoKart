@@ -131,8 +131,8 @@ saveCommentBtn.addEventListener('click', () => {
 const savedComment = localStorage.getItem('comment');
 if (savedComment) {
   commentTextarea.value = savedComment;
-}else{
-    alert("Nothing");
-}
+// }else{
+//     alert("Nothing");
+// }
 
-// });
+};

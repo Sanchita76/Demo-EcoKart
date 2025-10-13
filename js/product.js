@@ -91,7 +91,7 @@ function renderProduct(product) {
 document.getElementById("buy-now").addEventListener("click", function() {
   const cartCount = parseInt(document.getElementById("cart-count").textContent);
   if (cartCount > 0) {
-    window.location.href = "http://127.0.0.1:5500/checkout.html";
+    window.location.href = "checkout.html";
   } else {
     alert("Your cart is empty. Please add some products to proceed.");
   }
